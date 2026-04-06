@@ -8,6 +8,7 @@ import Team from '@components/Team.astro'
 import Simone from '../assets/images/team/simone.jpg'
 import Sam from '../assets/images/team/sam.png'
 import Anna from '../assets/images/team/anna.png'
+import Kelly from '../assets/images/team/kelly.jpg'
 import CallToAction from '@components/CallToAction.astro'
 ---
 
@@ -49,7 +50,7 @@ import CallToAction from '@components/CallToAction.astro'
   <section class="my-24 text-left" id="team">
     <div class="container">
       <h2 class="mb-16 text-6xl">Who we are</h2>
-      <div class="grid grid-cols-1 justify-stretch gap-12 md:grid-cols-3">
+      <div class="grid grid-cols-1 justify-stretch gap-12 md:grid-cols-4">
         <Team
           profileImage={Simone}
           name="Simone Massaro"
@@ -67,6 +68,12 @@ import CallToAction from '@components/CallToAction.astro'
           name="Anna Dodd"
           experience="Communications, project management, research"
           education="MA History of Global Markets; IM Global Markets, Local Creativities; BA Political Science"
+        />
+        <Team
+          profileImage={Kelly}
+          name="Dr. Kelly Kapsar"
+          experience="Ecology, biodiversity, software development, data science"
+          education="Ph.D. Fisheries & Wildlife; B.A. Biology"
         />
       </div>
     </div>
