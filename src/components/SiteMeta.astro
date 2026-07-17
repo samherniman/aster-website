@@ -1,5 +1,6 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
+// import { ViewTransitions } from 'astro:transitions'
+import { ClientRouter } from "astro:transitions";
 
 /**
  * SiteMeta Component
@@ -51,4 +52,5 @@ let subtitle = 'Digital solutions for nature'
 <!-- page title -->
 <title>{title} - {subtitle}</title>
 
-<ViewTransitions />
+<ClientRouter />
+<!-- <ViewTransitions /> -->
