@@ -58,7 +58,7 @@
     "sass": "^1.89.2",
     "svgo": "^3.3.2",
     "tailwindcss": "^4.1.10",
-    "wrangler": "^4.20.0"
+    "wrangler": "^4.112.0"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.5.4",
@@ -67,6 +67,6 @@
     "accessible-astro-components": "^4.1.1"
   },
   "engines": {
-      "node": ">= 22"
-    }
+    "node": ">= 22"
+  }
 }
