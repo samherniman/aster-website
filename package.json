@@ -1,11 +1,11 @@
 {
-  "name": "pandionlabs.dev",
-  "description": "Pandion Labs website (based on Accessible Astro Starter)",
+  "name": "asterbees.org",
+  "description": "Aster website (based on Accessible Astro Starter)",
   "version": "4.1.0",
   "author": "Incluud",
   "license": "MIT",
   "type": "module",
-  "homepage": "https://pandionlabs.dev",
+  "homepage": "https://asterbees.org",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -65,7 +65,8 @@
     "@astrojs/cloudflare": "^14.2.1",
     "@lucide/astro": "^1.25.0",
     "@tailwindcss/vite": "^4.1.10",
-    "accessible-astro-components": "^4.1.1"
+    "accessible-astro-components": "^4.1.1",
+    "vite": "^8.2.1"
   },
   "engines": {
     "node": ">=22.12.0"
