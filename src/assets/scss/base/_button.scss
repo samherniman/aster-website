@@ -33,6 +33,16 @@
     }
   }
 
+  &.color-dark {
+    border-color: light-dark(var(--color-dark-700), var(--color-dark-100));
+    background-color: light-dark(var(--background-color), var(--background-color));
+
+    &:where(:hover, :focus-visible) {
+      border-color: light-dark(var(--color-dark-700), var(--color-dark-100));
+      background-color: light-dark(var(--color-secondary-900), var(--color-secondary-900));
+    }
+  }
+
   &.has-icon {
     display: flex;
     align-items: center;
