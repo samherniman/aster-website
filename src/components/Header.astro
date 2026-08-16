@@ -1,65 +1,43 @@
 ---
-import Navigation from '../components/Navigation.astro'
-import { SkipLink } from 'accessible-astro-components'
-import { Icon } from 'astro-icon/components'
+import Navigation from '@components/Navigation.astro'
+import LauncherConfig from '@components/LauncherConfig.astro'
+import { HighContrast, ReducedMotion, SkipLink } from 'accessible-astro-components'
 
 /**
  * Header Component
  *
- * @description A component that displays the header of the website with updated navigation
+ * @description A component that displays the header of the website
  */
 ---
 
 <header>
   <SkipLink />
-  <Navigation>
-    <li class="menu-item hidden md:block">
-      <a href="/#about">About</a>
-    </li>
-    <li class="menu-item has-dropdown hidden md:block">
-      <button aria-haspopup="true" aria-expanded="false">
-        Services
-        <Icon name="lucide:chevron-down" size="32" />
-      </button>
-      <ul class="dropdown-menu">
-        <li class="submenu-item">
-          <a href="/science">Science</a>
-        </li>
-        <li class="submenu-item">
-          <a href="/forest">Forest</a>
-        </li>
-        <li class="submenu-item">
-          <a href="/biodiversity">Biodiversity</a>
-        </li>
-        <li class="submenu-item">
-          <a href="/custom-solutions">Customized Solutions</a>
-        </li>
-      </ul>
-    </li>
-    {/* Mobile Services Flat List - visible on mobile, hidden on md+ */}
-    <li class="menu-item md:hidden">
-      <a href="/science">Science</a>
-    </li>
-    <li class="menu-item md:hidden">
-      <a href="/forest">Forest</a>
-    </li>
-    <li class="menu-item md:hidden">
-      <a href="/biodiversity">Biodiversity</a>
-    </li>
-    <li class="menu-item md:hidden">
-      <a href="/custom-solutions">Customized Solutions</a>
-    </li>
-    <li class="menu-item highlight">
-      <a href="/#contact">Contact us</a>
-    </li>
-  </Navigation>
+  <!-- Initialize preference components -->
+  <div hidden>
+    <HighContrast />
+    <ReducedMotion />
+  </div>
+
+  <Navigation />
+  {/* To remove the launcher, delete this component and remove the LauncherTrigger from `Navigation.astro`. */}
+  <LauncherConfig />
 </header>
 
 <style lang="scss" is:global>
+  @use 'scss/base/breakpoint' as *;
+
   header {
-    .type-icon {
+    li.type-icon {
       display: block;
-      margin-inline: -7px;
+
+      @include breakpoint('nav') {
+        translate: 0 4px;
+      }
+
+      button {
+        border: none;
+        border-radius: 0;
+      }
 
       svg {
         inline-size: 30px;
@@ -67,50 +45,19 @@ import { Icon } from 'astro-icon/components'
       }
     }
 
-    .has-dropdown {
-      position: relative;
-
-      .dropdown-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 10;
-        border: 1px solid #ddd;
-        background-color: white;
-        padding: 0;
-        min-width: 200px;
-        list-style: none;
-
-        .submenu-item {
-          padding: 0.5rem 1rem;
-
-          a {
-            display: block;
-            color: #333;
-            text-decoration: none;
-
-            &:hover {
-              background-color: #f4f4f4;
-            }
-          }
-        }
+    li.type-icon ~ li.type-icon {
+      @include breakpoint('nav') {
+        margin-inline-start: calc(var(--space-2xs) * -1);
       }
+    }
 
-      &:hover,
-      &:focus-within {
-        .dropdown-menu {
-          display: block;
-        }
-      }
+    li.desktop-launcher {
+      display: none;
+    }
 
-      button {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        cursor: pointer;
-        border: none;
-        background: none;
+    @include breakpoint('nav') {
+      li.desktop-launcher {
+        display: block;
       }
     }
   }

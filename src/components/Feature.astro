@@ -1,5 +1,7 @@
 ---
-import { Icon } from 'astro-icon/components'
+import { Card, Heading, Link } from 'accessible-astro-components'
+// import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
 
 /**
  * Feature Component
@@ -16,128 +18,86 @@ interface Props {
    */
   title: string
   /**
-   * Optional URL to make the feature clickable
+   * The heading level for the feature title
+   * @default 'h3'
    */
-  linkTo?: string
+  level?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  imageloc: any
+  /**
+   * The image to display
+   */
 }
 
-const { icon = 'mdi:rocket', title = 'Title', linkTo }: Props = Astro.props
+const { loading = 'eager' }: Props = Astro.props
+const { icon = 'mdi:rocket', title = 'Title', level = 'h3', imageloc }: Props = Astro.props
 ---
 
-<a href={linkTo} class="feature flexDirection flex flex-col gap-4">
-  <div class="flex flex-row items-end gap-6">
-    <Icon name={icon} />
-    <h3 class="flex-grow self-center text-left text-3xl font-bold">{title}</h3>
-  </div>
-  <div>
+<div class="feature flex flex-col gap-4">
+  <!-- <Icon aria-hidden="true" name={icon} /> -->
+  <div class="content">
+    <Heading level={level} size="h6" class="mb-2">{title}</Heading>
+    <Image
+        src={imageloc}
+        alt="Aster logo"
+        aria-hidden="true"
+        layout='full-width'
+        position='center'
+        loading={loading}
+      />
     <p>
       <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
     </p>
   </div>
-  <div class="feature-button mt-auto flex self-center">
-    Learn More
-    <Icon name="lucide:arrow-right" />
-  </div>
+</div>
 
-  <style lang="scss">
-    @use '../assets/scss/base/breakpoint' as *;
-    @use '../assets/scss/base/mixins' as *;
+<style lang="scss">
+  @use 'scss/base/breakpoint' as *;
 
-    .feature {
-      display: flex;
+  .feature {
+    position: relative;
+    padding: var(--space-l);
+    inline-size: calc(100% - var(--space-l));
+
+    > * {
       position: relative;
-      padding: var(--space-l);
-      inline-size: calc(100% - var(--space-l));
-      color: inherit;
-      text-decoration: none;
-
-      > * {
-        position: relative;
-        z-index: 2;
-      }
-
-      @include breakpoint(xl) {
-        inline-size: 100%;
-      }
-
-      &::before,
-      &::after {
-        position: absolute;
-        content: '';
-      }
-
-      &::before {
-        z-index: 1;
-        transition: border-width 0.2s ease;
-        inset: 0;
-        box-shadow: 0 0 0 6px var(--color-neutral-110);
-        border: 3px solid var(--color-neutral-700);
-        border-radius: var(--radius-l);
-        background-color: var(--color-neutral-110);
-      }
-
-      &::after {
-        z-index: 0;
-        inset: var(--space-m) -0.85rem -0.85rem 1rem;
-        border-radius: var(--radius-l);
-        background-color: var(--link-color);
-      }
-
-      &:hover {
-        cursor: pointer;
-
-        &::before {
-          border-width: 6px;
-        }
-      }
+      z-index: 2;
     }
 
-    :global(.feature [data-icon]) {
-      inline-size: 4rem;
-      block-size: auto;
-      color: var(--link-color);
+    @include breakpoint(xl) {
+      inline-size: 100%;
     }
 
-    :global(.darkmode .feature::before) {
-      box-shadow: 0 0 0 6px var(--color-neutral-900);
-      background-color: var(--color-neutral-900);
-    }
-    .feature:hover {
-      [data-icon] {
-        animation: boop 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-      }
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
     }
 
-    .feature-button {
-      display: flex;
-      align-items: center;
-      gap: var(--space-2xs);
-      border-width: 0px;
-      border-radius: var(--radius-s);
-      background-color: transparent;
-      /* padding: var(--space-s); */
-      color: var(--color-neutral-900);
-      font-weight: 600;
-      text-decoration: none;
-
-      @include text-decoration(transparent, currentColor);
-
-      [data-icon] {
-        transition: translate var(--animation-speed-fast) var(--cubic-bezier);
-        inline-size: 1.15rem;
-        color: black;
-      }
-
-      &:where(:hover, :focus) {
-        /* background-color: var(--color-neutral-900); */
-        /* color: var(--color-neutral-100); */
-        text-decoration: underline;
-
-        [data-icon] {
-          translate: 5px 0;
-          /* color: white; */
-        }
-      }
+    &::before {
+      z-index: 1;
+      inset: 0;
+      box-shadow: 0 0 0 6px var(--color-neutral-100);
+      border: 3px solid var(--color-neutral-700);
+      border-radius: var(--radius-l);
+      background-color: var(--color-neutral-100);
     }
-  </style>
-</a>
+
+    &::after {
+      z-index: 0;
+      inset: var(--space-m) -0.85rem -0.85rem 1rem;
+      border-radius: var(--radius-l);
+      background-color: var(--link-color);
+    }
+  }
+
+  :global(.feature [data-icon]) {
+    inline-size: 4rem;
+    block-size: auto;
+    color: var(--link-color);
+  }
+
+  :global(.darkmode .feature::before) {
+    box-shadow: 0 0 0 6px var(--color-neutral-900);
+    background-color: var(--color-neutral-900);
+  }
+</style>

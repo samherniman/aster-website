@@ -1,6 +1,8 @@
 ---
 import ResponsiveToggle from './ResponsiveToggle.astro'
+import NavigationItems from './NavigationItems.astro'
 import Logo from './Logo.astro'
+import { LauncherTrigger } from 'accessible-astro-launcher'
 
 /**
  * Navigation Component
@@ -9,21 +11,20 @@ import Logo from './Logo.astro'
  */
 ---
 
-<div id="main-navigation" class="py-4">
-  <div class="container justify-between">
+<div id="main-navigation" class="py-8">
+  <div class="container">
     <Logo />
     <div class="wrapper">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
-        <ul class="menu">
-          <slot />
-        </ul>
+        <NavigationItems />
       </nav>
       <ResponsiveToggle />
+      <div class="mobile-launcher">
+        <LauncherTrigger launcherId="site-launcher" iconOnly={true} gradientBorder={true} />
+      </div>
     </div>
     <nav class="mobile-menu" aria-label="Main navigation mobile">
-      <ul class="menu">
-        <slot />
-      </ul>
+      <NavigationItems />
     </nav>
   </div>
 </div>
@@ -43,7 +44,7 @@ import Logo from './Logo.astro'
       const currentPathname = window.location.pathname
 
       mobileDesktopMenus.forEach((menu) => {
-        const menuItems = [...menu.querySelectorAll('a:not([rel*="external"])')] as HTMLAnchorElement[]
+        const menuItems = [...menu.querySelectorAll('a[href]:not([rel*="external"])')] as HTMLAnchorElement[]
 
         menuItems.forEach((menuItem) => {
           if (currentPathname.includes(menuItem.pathname.replaceAll('/', '')) && menuItem.textContent !== 'Home') {
@@ -214,14 +215,14 @@ import Logo from './Logo.astro'
 </script>
 
 <style lang="scss" is:global>
-  @use '../assets/scss/base/mixins' as *;
-  @use '../assets/scss/base/breakpoint' as *;
+  @use 'scss/base/mixins' as *;
+  @use 'scss/base/breakpoint' as *;
 
   #main-navigation {
     > .container {
       display: flex;
       flex-wrap: wrap;
-      /* justify-content: space-between; */
+      justify-content: space-between;
       align-items: center;
     }
 
@@ -240,6 +241,10 @@ import Logo from './Logo.astro'
       gap: var(--space-2xs);
     }
 
+    .mobile-launcher {
+      display: flex;
+    }
+
     .desktop-menu {
       display: none;
     }
@@ -251,6 +256,10 @@ import Logo from './Logo.astro'
       }
 
       .responsive-toggle {
+        display: none;
+      }
+
+      .mobile-launcher {
         display: none;
       }
 
@@ -278,18 +287,22 @@ import Logo from './Logo.astro'
 
         li {
           align-content: center;
-          font-weight: bold;
         }
 
         a:hover,
         a:focus-visible,
+        .is-active,
         button[aria-expanded='true'],
         .has-dropdown > button:hover,
         .has-dropdown > button:focus-visible {
           text-decoration: underline;
-          text-decoration-style: solid;
-          text-decoration-thickness: 2px;
+          text-decoration-style: wavy;
+          text-decoration-thickness: 1px;
           text-underline-offset: 7px;
+        }
+
+        .is-active {
+          font-weight: bold;
         }
 
         .highlight a {
@@ -397,11 +410,6 @@ import Logo from './Logo.astro'
     .darkmode-toggle {
       border: none;
       padding: 0;
-
-      @include breakpoint('nav') {
-        // Align with the menu items
-        margin-block-start: 7px;
-      }
 
       .icon {
         inline-size: 30px;
