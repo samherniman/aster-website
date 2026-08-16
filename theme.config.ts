@@ -26,50 +26,50 @@ export default defineThemeConfig({
               label: 'Home',
               href: '/',
             },
-      {
-              type: 'link',
-              label: 'Blog',
-              href: '/blog',
-            },
-      {
-              type: 'link',
-              label: 'Portfolio',
-              href: '/portfolio',
-            },
-      {
-              type: 'dropdown',
-              label: 'Features',
-              items: [
-                {
-                            label: 'Accessibility statement',
-                            href: '/accessibility-statement',
-                          },
-                {
-                            label: 'Accessible components',
-                            href: '/accessible-components',
-                          },
-                {
-                            label: 'Accessible launcher',
-                            href: '/accessible-launcher',
-                          },
-                {
-                            label: 'Color contrast checker',
-                            href: '/color-contrast-checker',
-                          },
-                {
-                            label: 'Markdown page',
-                            href: '/markdown-page',
-                          },
-                {
-                            label: 'MDX page',
-                            href: '/mdx-page',
-                          },
-                {
-                            label: 'Sitemap',
-                            href: '/sitemap',
-                          }
-              ],
-            },
+      // {
+      //         type: 'link',
+      //         label: 'Blog',
+      //         href: '/blog',
+      //       },
+      // {
+      //         type: 'link',
+      //         label: 'Portfolio',
+      //         href: '/portfolio',
+      //       },
+      // {
+      //         type: 'dropdown',
+      //         label: 'Features',
+      //         items: [
+      //           {
+      //                       label: 'Accessibility statement',
+      //                       href: '/accessibility-statement',
+      //                     },
+      //           {
+      //                       label: 'Accessible components',
+      //                       href: '/accessible-components',
+      //                     },
+      //           {
+      //                       label: 'Accessible launcher',
+      //                       href: '/accessible-launcher',
+      //                     },
+      //           {
+      //                       label: 'Color contrast checker',
+      //                       href: '/color-contrast-checker',
+      //                     },
+      //           {
+      //                       label: 'Markdown page',
+      //                       href: '/markdown-page',
+      //                     },
+      //           {
+      //                       label: 'MDX page',
+      //                       href: '/mdx-page',
+      //                     },
+      //           {
+      //                       label: 'Sitemap',
+      //                       href: '/sitemap',
+      //                     }
+      //         ],
+      //       },
       {
               type: 'link',
               label: 'Contact',
