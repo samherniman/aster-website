@@ -1,6 +1,8 @@
 ---
+import { Link } from 'accessible-astro-components'
 import { Image } from 'astro:assets'
-import logo from '@assets/images/aster_logo.png'
+import themeConfig from '@theme-config'
+
 
 /**
  * Logo Component
@@ -18,12 +20,18 @@ interface Props {
 const { loading = 'eager' }: Props = Astro.props
 ---
 
-<a href="/" class="flex items-center gap-2 !no-underline">
-  <Image src={logo} alt="Aster Logo" height="80" loading={loading} />
-</a>
-
-<style lang="scss">
-  a {
-    color: var(--foreground-color);
+<Link href="/" class="flex items-center gap-2">
+  {
+    themeConfig.logo && (
+      <Image
+        src={themeConfig.logo}
+        alt="Aster logo"
+        aria-hidden="true"
+        width="86"
+        height="48"
+        loading={loading}
+      />
+    )
   }
-</style>
+  <span class="text-sm font-bold sm:text-lg">{themeConfig.name}</span>
+</Link>

@@ -1,18 +1,15 @@
 {
-  "name": "pandionlabs.dev",
-  "description": "Pandion Labs website (based on Accessible Astro Starter)",
-  "version": "4.1.0",
+  "name": "aster-website",
+  "description": "Aster Website website built with Accessible Astro Starter.",
+  "version": "0.0.1",
   "author": "Incluud",
   "license": "MIT",
   "type": "module",
-  "homepage": "https://pandionlabs.dev",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "lint": "eslint . --no-warn-ignored",
-    "generate-types": "wrangler types"
+    "preview": "astro preview"
   },
   "keywords": [
     "astro",
@@ -28,46 +25,51 @@
     "blog",
     "portfolio"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pandionlabs/pandionlabs.dev.git"
-  },
-  "bugs": {
-    "url": "https://github.com/pandionlabs/pandionlabs.dev/issues"
-  },
   "devDependencies": {
-    "@astrojs/mdx": "^7.0.3",
-    "@astrojs/partytown": "^2.1.4",
-    "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.29.0",
-    "@iconify-json/lucide": "^1.2.48",
-    "@typescript-eslint/eslint-plugin": "^8.34.0",
-    "@typescript-eslint/parser": "^8.34.0",
-    "astro": "^7.1.0",
-    "astro-compress": "^2.3.8",
-    "astro-eslint-parser": "^1.2.2",
-    "astro-icon": "^1.1.5",
-    "eslint": "^9.29.0",
-    "eslint-plugin-astro": "^1.3.1",
+    "@astrojs/mdx": "^7.0.5",
+    "@astrojs/partytown": "^2.1.7",
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "^9.39.2",
+    "@iconify-json/lucide": "^1.2.105",
+    "@types/sanitize-html": "^2.16.1",
+    "@typescript-eslint/eslint-plugin": "^8.59.1",
+    "@typescript-eslint/parser": "^8.59.1",
+    "astro": "^7.2.2",
+    "astro-compress": "^2.4.1",
+    "astro-eslint-parser": "^1.4.0",
+    "eslint": "^9.39.2",
+    "eslint-plugin-astro": "^1.7.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "globals": "^16.2.0",
-    "prettier": "^3.5.3",
+    "globals": "^17.6.0",
+    "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-css-order": "^2.1.2",
-    "prettier-plugin-tailwindcss": "^0.6.12",
-    "sanitize-html": "^2.17.0",
-    "sass": "^1.89.2",
-    "svgo": "^3.3.2",
-    "tailwindcss": "^4.1.10",
-    "wrangler": "^4.121.0"
+    "prettier-plugin-css-order": "^2.2.0",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "sanitize-html": "^2.17.3",
+    "sass": "^1.99.0",
+    "svgo": "^4.0.1",
+    "tailwindcss": "^4.2.4",
+    "wrangler": "^4.123.0"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^14.2.1",
-    "@lucide/astro": "^1.25.0",
-    "@tailwindcss/vite": "^4.1.10",
-    "accessible-astro-components": "^4.1.1"
+    "@astrojs/sitemap": "^3.7.2",
+    "@tailwindcss/vite": "^4.2.4",
+    "accessible-astro-components": "^5.2.0",
+    "accessible-astro-launcher": "^2.0.0",
+    "astro-seo": "^1.1.0"
+  },
+  "overrides": {
+    "vite": "^8.0.13"
   },
   "engines": {
     "node": ">=22.12.0"
+  },
+  "private": true,
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true,
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": true,
+    "esbuild@0.28.1": true,
+    "workerd@1.20260811.1": true
   }
 }

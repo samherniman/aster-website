@@ -1,38 +1,52 @@
 ---
 import CallToAction from './CallToAction.astro'
-import { Icon } from 'astro-icon/components'
+import Logo from './Logo.astro'
+import { Heading, Link } from 'accessible-astro-components'
 
 /**
  * Footer Component
  *
  * @description A component that displays the footer of the website
  */
-export interface Props {
-  showCallToAction?: boolean
-}
-
-const { showCallToAction = true } = Astro.props
 const currentYear = new Date().getFullYear()
 ---
 
 <footer>
-  {showCallToAction && <CallToAction />}
-  <section class="py-8">
-    <div class="container flex flex-row justify-center gap-4 md:justify-around">
-      <p>
-        &copy; {currentYear} - Pandion Labs
-      </p>
-      <div class="flex flex-row gap-4">
-        <a href="https://github.com/pandionlabs/pandionlabs.dev">
-          <Icon name="lucide:github" />
-          <span class="sr-only">Go to the GitHub page</span>
-        </a>
-        <a href="https://www.linkedin.com/company/pandion-labs/">
-          <Icon name="lucide:linkedin" />
-          <span class="sr-only">Go to the LinkedIn page</span>
-        </a>
+  <!-- <CallToAction /> -->
+  <section class="py-20">
+    <Heading level="h2" class="sr-only">Footer</Heading>
+    <div class="container grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div class="flex flex-col gap-4">
+        <Heading level="h3" size="h6">Find us </Heading>
+        <ul class="flex flex-col gap-2">
+          <li><Link href="https://www.linkedin.com/company/the-aster-app/">LinkedIn</Link></li>
+          <li><Link href="https://www.instagram.com/aster.bees">Instagram</Link></li>
+          <li><Link href="/markdown-page">Markdown page</Link></li>
+          <li><Link href="/mdx-page">MDX page</Link></li>
+          <li><Link href="/404-page">404 page</Link></li>
+          
+        </ul>
       </div>
-      <a href="mailto:hello@pandionlabs.dev">hello@pandionlabs.dev</a>
+      <div class="flex flex-col gap-4">
+        <Heading level="h3" size="h6">More information</Heading>
+        <ul class="flex flex-col gap-2">
+          <li><Link href="/accessibility-statement">Accessibility statement</Link></li>
+          <li><Link href="/sitemap">Sitemap</Link></li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-4">
+        <Logo loading="lazy" />
+        <p class="leading-[1.75]">
+          Aster is a beekeeping app that helps beekeepers beekeep better. We are currently funded by the EXIST grant from the German government until April 2026. We want to build an app that has direct ideas and feedback from beekeepers on the ground. So, please, get in touch! 
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="py-8">
+    <div class="container flex flex-col gap-4 md:flex-row md:justify-between">
+      <p>
+        &copy; {currentYear} - Aster & <Link href="https://pandionlabs.dev/">Pandion Labs</Link>.
+      </p>
     </div>
   </section>
 </footer>
