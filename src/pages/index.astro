@@ -5,8 +5,9 @@ import Feature from '@components/Feature.astro'
 import Team from '@components/Team.astro'
 import CallToAction from '@components/CallToAction.astro'
 import Image from 'astro/components/Image.astro'
-// import FeaturedPosts from '@components/FeaturedPosts.astro'
-// import FeaturedProjects from '@components/FeaturedProjects.astro'
+import Supporterlogo from '@components/Supporterlogo.astro'
+
+
 
 
 
@@ -21,15 +22,14 @@ import additionalImage3 from '@assets/images/features/Group.svg';
 
 import Simone from '@assets/images/team/simone.jpg'
 import Sam from '@assets/images/team/sam.png'
-import Anna from '@assets/images/team/anna.png'
-import Leo from '@assets/images/team/leo.png'
+import Anna from '@assets/images/team/anna.jpg'
+import Leo from '@assets/images/team/leo.jpg'
 
 import eulogo from '@assets/images/supporters/eulogo.png'
 import existlogo from '@assets/images/supporters/existlogo.png'
-import imlogo from '@assets/images/supporters/Imkereibedarf.png'
-import ministrylogo from '@assets/images/supporters/ministry.png'
+import imlogo from '@assets/images/supporters/imkereibedarflogo.png'
+import ministrylogo from '@assets/images/supporters/bundesministeriumlogo.png'
 import unilogo from '@assets/images/supporters/unigoelogo.png'
-import Supporterlogo from '@components/Supporterlogo.astro'
 
 
 ---
@@ -37,16 +37,14 @@ import Supporterlogo from '@components/Supporterlogo.astro'
 <DefaultLayout title="Aster Website" useTitleTemplate={false}>
   <Hero />
 
-  <div class="container">
-    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <div class="flex flex-col items-left gap-8 md:items-start">
+  <div class="w-full">
+      <div class="flex flex-col items-center gap-8 md:items-start">
         <p class="text-center text-2xl md:text-left">
           SUPPORTED BY
         </p>
         <h3 class="text-center text-6xl md:text-left lg:text-8xl">Backed by organizations who believe in better beekeeping.</h3>
-        <div class="container">
-        <div class="flex flex-row flex-wrap lg:flex-nowrap">
-          <Supporterlogo
+        <div class="flex flex-row flex-wrap lg:flex-nowrap items-center justify-center">
+        <Supporterlogo
         profileImage={imlogo}
         name="Imkereibedarf logo"
         aria-hidden="true"
@@ -72,9 +70,7 @@ import Supporterlogo from '@components/Supporterlogo.astro'
         aria-hidden="true"
         />
         </div>
-        </div>
       </div>
-    </div>
   </div>
 
   <div class="container">

@@ -15,5 +15,5 @@ const { profileImage, name } = Astro.props as Props
   <Image
     src={profileImage}
     alt={name}
-    class="lg:shrink"
+    class="lg:shrink object-contain lg:min-w-1/5 max-w-40"
   />
