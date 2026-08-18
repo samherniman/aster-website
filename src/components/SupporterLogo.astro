@@ -1,0 +1,19 @@
+---
+// import GradientBorder from '@components/GradientBorder.astro'
+import { Image } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
+
+// Define props for better type checking and clarity
+interface Props {
+  profileImage: ImageMetadata // astro:assets ImageMetadata
+  name: string
+}
+
+const { profileImage, name } = Astro.props as Props
+---
+
+  <Image
+    src={profileImage}
+    alt={name}
+    class="lg:shrink"
+  />

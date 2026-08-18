@@ -29,6 +29,7 @@ import existlogo from '@assets/images/supporters/existlogo.png'
 import imlogo from '@assets/images/supporters/Imkereibedarf.png'
 import ministrylogo from '@assets/images/supporters/ministry.png'
 import unilogo from '@assets/images/supporters/unigoelogo.png'
+import Supporterlogo from '@components/Supporterlogo.astro'
 
 
 ---
@@ -45,29 +46,29 @@ import unilogo from '@assets/images/supporters/unigoelogo.png'
         <h3 class="text-center text-6xl md:text-left lg:text-8xl">Backed by organizations who believe in better beekeeping.</h3>
         <div class="container">
         <div class="flex flex-row flex-wrap lg:flex-nowrap">
-          <Image
-        src={imlogo}
-        alt="Imkereibedarf logo"
+          <Supporterlogo
+        profileImage={imlogo}
+        name="Imkereibedarf logo"
         aria-hidden="true"
         />
-        <Image
-        src={unilogo}
-        alt="University of Goettingen logo"
+        <Supporterlogo
+        profileImage={unilogo}
+        name="University of Goettingen logo"
         aria-hidden="true"
         />
-        <Image
-        src={existlogo}
-        alt="EXIST logo"
+        <Supporterlogo
+        profileImage={existlogo}
+        name="EXIST logo"
         aria-hidden="true"
         />
-        <Image
-        src={ministrylogo}
-        alt="Bundesministerium logo"
+        <Supporterlogo
+        profileImage={ministrylogo}
+        name="Bundesministerium logo"
         aria-hidden="true"
         />
-        <Image
-        src={eulogo}
-        alt="European Union logo"
+        <Supporterlogo
+        profileImage={eulogo}
+        name="European Union logo"
         aria-hidden="true"
         />
         </div>
