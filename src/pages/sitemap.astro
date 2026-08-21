@@ -12,48 +12,23 @@ const staticPages = [
   {
     title: 'Home',
     url: '/',
-    description: 'Welcome to our accessible website featuring modern web development and inclusive design principles.',
-  },
-  {
-    title: 'Accessible components',
-    url: '/accessible-components',
-    description: 'A comprehensive showcase of accessible UI components and design patterns for modern web development.',
-  },
-  {
-    title: 'Portfolio',
-    url: '/portfolio',
-    description: 'A collection of projects demonstrating accessible design and development practices.',
+    description: 'Welcome to the Aster website.',
   },
   {
     title: 'Blog',
     url: '/blog',
-    description: 'Articles and insights about web accessibility, development best practices, and inclusive design.',
+    description: 'Articles and insights about Aster.',
   },
   {
     title: 'Contact',
     url: '/contact',
     description:
-      'Get in touch with us for accessibility consulting, development services, or collaboration opportunities.',
-  },
-  {
-    title: 'Color contrast checker',
-    url: '/color-contrast-checker',
-    description: 'An interactive tool to check color contrast ratios and ensure WCAG compliance for your designs.',
+      'Get in touch with us.',
   },
   {
     title: 'Accessibility statement',
     url: '/accessibility-statement',
     description: 'Our commitment to accessibility and information about the accessibility features of this website.',
-  },
-  {
-    title: 'Markdown page example',
-    url: '/markdown-page',
-    description: 'A demonstration of Markdown content rendering with accessible formatting and typography.',
-  },
-  {
-    title: 'MDX page example',
-    url: '/mdx-page',
-    description: 'An example of MDX content combining Markdown with interactive React components.',
   },
   {
     title: 'Thank you',
@@ -92,38 +67,6 @@ const staticPages = [
                     {page.url}
                   </code>
                 </p>
-              </article>
-            ))
-          }
-        </div>
-      </div>
-
-      <!-- Portfolio Projects Section -->
-      <div>
-        <Heading level="h2">Portfolio projects</Heading>
-        <p class="mb-6">
-          Explore our collection of {projects.length} accessibility-focused projects showcasing inclusive design and development
-          practices.
-        </p>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {
-            projects.map((project) => (
-              <article>
-                <Heading level="h3" size="h6" class="mb-3">
-                  <a href={`/portfolio/${project.id}`}>{project.data.title}</a>
-                </Heading>
-                <p class="mb-3">{project.data.description}</p>
-                <div class="text-xs">
-                  <p class="mb-1">
-                    By: <span class="font-medium">{project.data.author}</span>
-                  </p>
-                  <p>
-                    URL:{' '}
-                    <code class="rounded bg-neutral-100 px-1 py-0.5 text-xs text-neutral-500 dark:bg-neutral-800 dark:text-neutral-500">
-                      /portfolio/{project.id}
-                    </code>
-                  </p>
-                </div>
               </article>
             ))
           }

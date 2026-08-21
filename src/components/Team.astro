@@ -20,8 +20,6 @@ const { profileImage, name, experience, education } = Astro.props as Props
       <Image
         src={profileImage}
         alt={name}
-        width={profileImage.width}
-        height={profileImage.height}
         class="aspect-square rounded-(--radius-s) object-cover md:aspect-auto md:w-full md:text-3xl"
       />
     </div>
