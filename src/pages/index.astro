@@ -4,11 +4,7 @@ import Hero from '@components/Hero.astro'
 import Feature from '@components/Feature.astro'
 import Team from '@components/Team.astro'
 import CallToAction from '@components/CallToAction.astro'
-import Image from 'astro/components/Image.astro'
-// import FeaturedPosts from '@components/FeaturedPosts.astro'
-// import FeaturedProjects from '@components/FeaturedProjects.astro'
-
-
+import Supporterlogo from '@components/SupporterLogo.astro'
 
 import featureImage from "@assets/images/features/howitworkscards.png";
 import featureImage1 from '@assets/images/features/howitworkscards1.png';
@@ -21,85 +17,67 @@ import additionalImage3 from '@assets/images/features/Group.svg';
 
 import Simone from '@assets/images/team/simone.jpg'
 import Sam from '@assets/images/team/sam.png'
-import Anna from '@assets/images/team/anna.png'
-import Leo from '@assets/images/team/leo.png'
+import Anna from '@assets/images/team/anna.jpg'
+import Leo from '@assets/images/team/leo.jpg'
 
 import eulogo from '@assets/images/supporters/eulogo.png'
 import existlogo from '@assets/images/supporters/existlogo.png'
-import imlogo from '@assets/images/supporters/Imkereibedarf.png'
-import ministrylogo from '@assets/images/supporters/ministry.png'
+import imlogo from '@assets/images/supporters/imkereibedarflogo.png'
+import ministrylogo from '@assets/images/supporters/bundesministeriumlogo.png'
 import unilogo from '@assets/images/supporters/unigoelogo.png'
-
 
 ---
 
 <DefaultLayout title="Aster Website" useTitleTemplate={false}>
   <Hero />
 
-  <!-- <div class="container">
-    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <div class="flex flex-col items-left gap-8 md:items-start">
-        <p class="text-center text-2xl md:text-left">
+  <!-- <div class="w-full"> -->
+  <div>
+      <div class="flex flex-col items-center gap-8">
+        <!-- <p class="text-center text-2xl">
           SUPPORTED BY
-        </p>
-        <h3 class="text-center text-6xl md:text-left lg:text-8xl">Backed by organizations who believe in better beekeeping.</h3>
-
-        <div class="flex flex-col gap-3 min-[500px]:flex-row">
-          <Image
-        src={imlogo}
-        alt="Imkereibedarf logo"
+        </p> -->
+        <h3 class="text-center text-6xl lg:text-4xl">Backed by organizations who believe in better beekeeping.</h3>
+        <div class="flex flex-row flex-wrap lg:flex-nowrap items-center justify-center">
+        <Supporterlogo
+        profileImage={imlogo}
+        name="Imkereibedarf logo"
         aria-hidden="true"
-        width="214"
-        height="72"
         />
-        <Image
-        src={unilogo}
-        alt="University of Goettingen logo"
+        <Supporterlogo
+        profileImage={unilogo}
+        name="University of Goettingen logo"
         aria-hidden="true"
-        width="210"
-        height="145"
         />
-        <Image
-        src={existlogo}
-        alt="EXIST logo"
+        <Supporterlogo
+        profileImage={existlogo}
+        name="EXIST logo"
         aria-hidden="true"
-        width="186"
-        height="127"
         />
-        <Image
-        src={ministrylogo}
-        alt="Bundesministerium logo"
+        <Supporterlogo
+        profileImage={ministrylogo}
+        name="Bundesministerium logo"
         aria-hidden="true"
-        width="183"
-        height="91"
         />
-        <Image
-        src={eulogo}
-        alt="European Union logo"
+        <Supporterlogo
+        profileImage={eulogo}
+        name="European Union logo"
         aria-hidden="true"
-        width="89"
-        height="76"
         />
         </div>
       </div>
-    </div>
-  </div> -->
+  </div>
 
   <div class="container">
-    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <div class="flex flex-col items-left gap-8 md:items-start">
-        <p class="text-center text-2xl md:text-left">
+    <div class="grid grid-cols-1 items-center gap-24">
+      <div class="flex flex-col items-center gap-8">
+        <!-- <p class="text-center text-2xl">
           HOW IT WORKS
-        </p>
-        <h3 class="text-center text-6xl md:text-left lg:text-8xl">Personalized hive insights, right on your phone.</h3>
-
-        <p class="text-center text-2xl md:text-left">
+        </p> -->
+        <h3 class="text-center text-6xl lg:text-4xl">Personalized hive insights, right on your phone.</h3>
+        <p class="text-left text-2xl">
           Aster combines computer vision, remoste sensing, and data integration to give beekeepers real time insights into their hives.
         </p>
-        <div class="flex flex-col gap-3 min-[500px]:flex-row">
-          
-          
-        </div>
       </div>
     </div>
   </div>
@@ -125,11 +103,13 @@ import unilogo from '@assets/images/supporters/unigoelogo.png'
   </section>
 
   <div class="container">
-    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <div class="flex flex-col items-left gap-8 md:items-start">
-        <p class="text-center text-2xl md:text-left">
+    <div class="grid grid-cols-1 items-center gap-24">
+      <div class="flex flex-col gap-8">
+        <h3 class="text-center text-2xl lg:text-2xl">Additional features</h3>
+
+        <!-- <p class="text-center text-2xl">
           ADDITIONAL FEATURES
-        </p>
+        </p> -->
       </div>
     </div>
   </div>
@@ -154,7 +134,7 @@ import unilogo from '@assets/images/supporters/unigoelogo.png'
         <p class="text-center text-2xl md:text-left">
           WHAT'S THE BUZZ?
         </p>
-        <h3 class="text-center text-4xl md:text-left lg:text-8xl">Join the Aster community</h3>
+        <h3 class="text-center text-4xl md:text-left lg:text-4xl">Join the Aster community</h3>
 
         <p class="text-center text-2xl md:text-left">
           Learn about what we're building, and participate in the process!
@@ -178,25 +158,25 @@ import unilogo from '@assets/images/supporters/unigoelogo.png'
       <div class="grid grid-cols-1 justify-stretch gap-12 md:grid-cols-4">
         <Team
           profileImage={Simone}
-          name="Simone Massaro"
+          title="Simone Massaro"
           experience="Simone is a forester, data scientist, and ecologist currently doing his PhD in satellite based forest monitoring. Simone brings his experience across ecology and software development to build a platform that can be used by beekeepers and researchers alike."
           education="Data science & ecological modelling"
         />
         <Team
           profileImage={Sam}
-          name="Sam Herniman"
-          experience="Specializing in remote sensing, machine learning, and applied ecology, Sam is charged with integrating diverse remote sensing sources. With over a decade of practical experience, Sam is motivated to build a platform that is based in responsible scientific practice. "
+          title="Sam Herniman"
+          experience="Specializing in remote sensing, machine learning, and applied ecology, Sam is charged with integrating diverse remote sensing sources. With over a decade of practical experience, Sam is motivated to build a platform that is based in responsible scientific practice."
           education="Machine learning & remote sensing"
         />
         <Team
           profileImage={Anna}
-          name="Anna Dodd"
-          experience="Anna has worked across the fields of economic development, journalism, communications, and politics. For Aster, she brings her diverse experience to lead the company's communications, partnerships, and financials. She is also a beekeeping apprentice. "
+          title="Anna Dodd"
+          experience="Anna has worked across the fields of economic development, journalism, communications, and politics. For Aster, she brings her diverse experience to lead the company's communications, partnerships, and financials. She is also a beekeeping apprentice."
           education="Business. partnerships & communications"
         />
         <Team
           profileImage={Leo}
-          name="Leopold Dodd"
+          title="Leopold Dodd"
           experience="A certified beekeeper with 10 years of practical experience, Leopold provides beekeeping expertise and knowledge to inform the development of the app, leads app testing, and fosters Aster's beekeeper community. A native German speaker, he is the contact point for German relations."
           education="Beekeeping & field operations"
         />
