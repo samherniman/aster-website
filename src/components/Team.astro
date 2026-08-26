@@ -14,7 +14,7 @@ interface Props {
    */
   title: string
   /**
-   * The heading level for the feature title
+   * The heading level for the team title
    * @default 'h3'
    */
   level?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -61,7 +61,7 @@ const {title = 'Title', level = 'h3', profileImage, experience = 'test',  educat
 <style lang="scss">
   @use 'scss/base/breakpoint' as *;
 
-  .feature {
+  .team {
     position: relative;
     padding: var(--space-l);
     inline-size: calc(100% - var(--space-l));
@@ -94,17 +94,17 @@ const {title = 'Title', level = 'h3', profileImage, experience = 'test',  educat
       z-index: 0;
       inset: var(--space-m) -0.85rem -0.85rem 1rem;
       border-radius: var(--radius-l);
-      background-color: var(--link-color);
+      // background-color: var(--link-color);
     }
   }
 
-  :global(.feature [data-icon]) {
+  :global(.team [data-icon]) {
     inline-size: 4rem;
     block-size: auto;
     color: var(--link-color);
   }
 
-  :global(.darkmode .feature::before) {
+  :global(.darkmode .team::before) {
     box-shadow: 0 0 0 6px var(--color-neutral-900);
     background-color: var(--color-neutral-900);
   }

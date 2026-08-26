@@ -35,12 +35,12 @@ const { icon = 'mdi:rocket', title = 'Title', level = 'h3', imageloc }: Props = 
 <div class="feature flex flex-col gap-4">
   <!-- <Icon aria-hidden="true" name={icon} /> -->
   <div class="content">
+    <!-- <div class="numberCircle">1</div> -->
     <Heading level={level} size="h6" class="mb-2">{title}</Heading>
     <Image
         src={imageloc}
         alt="Aster logo"
         aria-hidden="true"
-        layout='full-width'
         position='center'
         loading={loading}
       />
@@ -100,4 +100,21 @@ const { icon = 'mdi:rocket', title = 'Title', level = 'h3', imageloc }: Props = 
     box-shadow: 0 0 0 6px var(--color-neutral-900);
     background-color: var(--color-neutral-900);
   }
+
+/*
+Source - https://stackoverflow.com/a/19613616
+Posted by Mike, modified by community. See post 'Timeline' for change history
+Retrieved 2026-08-24, License - CC BY-SA 4.0
+*/
+
+.numberCircle {
+  display: flex;
+  width: 8ch; /* Set this to slightly wider than the longest string */
+  align-items: center;  
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;  
+  border: 2px solid #666;
+}
+
 </style>
