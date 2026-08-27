@@ -6,6 +6,7 @@
   --brand-primary: #d648ff;
   --brand-secondary: #00d1b7;
   --brand-neutral: #b9bec4;
+  --brand-box: #b4b5b1;
   --brand-outline: #ff4500;
 
   // pallet brand
@@ -32,6 +33,17 @@
   --color-neutral-700: oklch(from var(--brand-neutral) 40% c h);
   --color-neutral-800: oklch(from var(--brand-neutral) 30% c h);
   --color-neutral-900: oklch(from var(--brand-neutral) 15% c h);
+
+   // pallet box
+  --color-box-100: oklch(from var(--brand-box) 100% 0 0);
+  --color-box-200: oklch(from var(--brand-box) 95% c h);
+  --color-box-300: oklch(from var(--brand-box) 90% c h);
+  --color-box-400: oklch(from var(--brand-box) 85% c h);
+  --color-box-500: oklch(from var(--brand-box) 80% c h);
+  --color-box-600: oklch(from var(--brand-box) 60% c h);
+  --color-box-700: oklch(from var(--brand-box) 40% c h);
+  --color-box-800: oklch(from var(--brand-box) 30% c h);
+  --color-box-900: oklch(from var(--brand-box) 15% c h);
 
   // color scheme
   --foreground-color: light-dark(var(--color-neutral-800), var(--color-neutral-100));

@@ -2,6 +2,7 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import Hero from '@components/Hero.astro'
 import Feature from '@components/Feature.astro'
+import Feature2 from '@components/Feature2.astro'
 import Team from '@components/Team.astro'
 import CallToAction from '@components/CallToAction.astro'
 import Supporterlogo from '@components/SupporterLogo.astro'
@@ -83,21 +84,16 @@ import unilogo from '@assets/images/supporters/unigoelogo.png'
   </div>
 
   <section class="mb-24">
-    <div class="container grid gap-6 md:grid-cols-3">
-      <Feature icon="lucide:layout-template" title="Capture" level="h2" imageloc={featureImage}>
-        The beekeeper captures photos of their beehive with ther smartphone, hands free.
+<div class="container grid gap-6 md:grid-cols-3">    <!-- <div class="flex flex-row flex-wrap flex-shrink md:flex-nowrap items-center justify-center"> -->
+      <Feature icon="lucide:layout-template" title="Capture" number = "1" text = "The beekeeper captures photos of their beehive with ther smartphone, hands free." level="h2" imageloc={featureImage}>
       </Feature>
-      <Feature icon="lucide:scissors" title="Count" level="h2" imageloc={featureImage1}>
-        Aster's computer vision model counts the bees with an accuracy rate of 96%.
+      <Feature icon="lucide:scissors" title="Count" number = "2" text = "Aster's computer vision model counts the bees with an accuracy rate of 96%." level="h2" imageloc={featureImage1}>  
       </Feature>
-      <Feature icon="lucide:accessibility" title="Build accessibly" level="h2" imageloc={featureImage2}>
-        Remote sensing data like weather trends, nearby crops, and blooms are integrated.
+      <Feature icon="lucide:accessibility" title="Build" number = "3" text = "Remote sensing data like weather trends, nearby crops, and blooms are integrated." level="h2" imageloc={featureImage2}>
       </Feature>
-      <Feature icon="lucide:accessibility" title="Analyze" level="h2" imageloc={featureImage3}>
-        Considering all data available, Aster provides an analysis of the health of the hive.
+      <Feature icon="lucide:accessibility" title="Analyze" number = "4" text = "Considering all data available, Aster provides an analysis of the health of the hive." level="h2" imageloc={featureImage3}>
       </Feature>
-      <Feature icon="lucide:accessibility" title="Advise" level="h2" imageloc={featureImage4}>
-        Aster shares reminders and recommendation on next steps for the beekeeper.
+      <Feature icon="lucide:accessibility" title="Advise" number = "5" text = "Aster shares reminders and recommendation on next steps for the beekeeper." level="h2" imageloc={featureImage4}>
       </Feature>
     </div>
   </section>
@@ -116,20 +112,20 @@ import unilogo from '@assets/images/supporters/unigoelogo.png'
 
   <section class="mb-24">
     <div class="container grid gap-6 md:grid-cols-3">
-      <Feature icon="lucide:layout-template" title="Inventory management" level="h2" imageloc={additionalImage1}>
+      <Feature2 icon="lucide:layout-template" title="Inventory management" level="h2" imageloc={additionalImage1}>
         Tracking for all beekeeping materials, with reminders when you're running low.
-      </Feature>
-      <Feature icon="lucide:scissors" title="Community forum" level="h2" imageloc={additionalImage2}>
+      </Feature2>
+      <Feature2 icon="lucide:scissors" title="Community forum" level="h2" imageloc={additionalImage2}>
         A central hub for beekeepers from around teh wrold to share information, build community, and ask questions.
-      </Feature>
-      <Feature icon="lucide:accessibility" title="Partner marketplace" level="h2" imageloc={additionalImage3}>
+      </Feature2>
+      <Feature2 icon="lucide:accessibility" title="Partner marketplace" level="h2" imageloc={additionalImage3}>
         Through Aster's partner network, access special discounts on beekeeping materials.
-      </Feature>
+      </Feature2>
     </div>
   </section>
 
   <div class="container">
-    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+    <!-- <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-left gap-8 md:items-start">
         <p class="text-center text-2xl md:text-left">
           WHAT'S THE BUZZ?
@@ -139,12 +135,9 @@ import unilogo from '@assets/images/supporters/unigoelogo.png'
         <p class="text-center text-2xl md:text-left">
           Learn about what we're building, and participate in the process!
         </p>
-        <!-- <div class="flex flex-col gap-2 min-[500px]:flex-row">
-            
-
-        </div> -->
       </div>
-    </div>
+    </div> -->
+
     <CallToAction />
 
   </div>
@@ -155,7 +148,7 @@ import unilogo from '@assets/images/supporters/unigoelogo.png'
       <h3 class="mb-16 text-2xl">
         We are a team of beekeepers, scientists, and developers committed to making responsible beekeeping easier and more accessible.
       </h3>
-      <div class="grid grid-cols-1 justify-stretch gap-12 md:grid-cols-4">
+      <div class="grid grid-cols-1 justify-stretch gap-6 md:grid-cols-2">
         <Team
           profileImage={Simone}
           title="Simone Massaro"
