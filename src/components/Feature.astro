@@ -43,21 +43,22 @@ const { icon = 'mdi:rocket', title = 'Title', number = '1', text = 'alhwoehaof',
 <div class="feature flex flex-col gap-1">
   <!-- <Icon aria-hidden="true" name={icon} /> -->
   <div class="content">
-    <div class="flex flex-row gap-3 items-center flex-shrink md:flex-wrap">
+    <div class="flex flex-row gap-3 flex-shrink md:flex-wrap">
     <div class="numberCircle">
       <Heading level={level} size="h4" style="color: white;">{number}</Heading>
     </div>
     <Heading level={level} size="h4" class="mb-2">{title}</Heading>
      </div>
+     <div>
     <Image
         src={imageloc}
         alt="Aster logo"
         aria-hidden="true"
-        position='center'
         loading={loading}
         class="shrink"
       />
     <Heading level="h6" size="h5">{text}</Heading>
+    </div>
   </div>
 </div>
 
@@ -66,6 +67,7 @@ const { icon = 'mdi:rocket', title = 'Title', number = '1', text = 'alhwoehaof',
 
   .feature {
     position: relative;
+    align-items: center;
     padding: var(--space-m);
     inline-size: calc(100% - var(--space-l));
 
