@@ -55,9 +55,9 @@ export type ThemeConfig = {
 
 const defaultConfig: Omit<ThemeConfig, 'name' | 'id'> = {
   seo: {
-    title: 'My Astro Site',
-    subtitle: '',
-    description: 'A website built with Accessible Astro Starter',
+    title: 'Aster',
+    subtitle: 'Every bee counts',
+    description: 'Aster is the beekeeping app that helps beekepers beekeep better.',
     author: '',
     image: null,
   },
