@@ -31,10 +31,8 @@ interface Props {
 }
 
 const {
-  title = "Let's talk bees-ness",
-  copytext = "For now, head on over to our newsletter and blog to talk with other beekeepers from around the world about beekeeping. Sorry for the pun - we had to.",
-  link = 'https://blog.asterbees.org',
-  linkText = 'Read our newsletter',
+  title = "Sign up for our newsletter",
+  copytext = "Or subscribe to our occasional email newsletter to get updates about our journey in your inbox",
 } = Astro.props
 ---
 
@@ -44,15 +42,7 @@ const {
     <p class="text-left text-2xl md:text-left">
       {copytext}
     </p>
-    <Link href={link} isButton size="lg" animateOnHover animationType="nudge">
-      {linkText}
-      <!-- <Icon aria-hidden="true" name="lucide:rocket" size="1.5rem" /> -->
-    </Link>
-    <p class="text-left text-2xl md:text-left">
-      Or subscribe to get our email newsletter sent directly to your inbox
-    </p>
     <div style="min-height: 58px;max-width: 440px;margin: 0 auto;width: 100%"><script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.3/umd/signup-form.min.js" data-button-color="#d648ff" data-button-text-color="#FFFFFF" data-site="https://blog.asterbees.org/" data-locale="en" async></script></div>
-
   </div>
 </div>
 
