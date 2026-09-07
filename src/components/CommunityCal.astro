@@ -31,18 +31,29 @@ interface Props {
 }
 
 const {
-  title = "Sign up for our newsletter",
-  copytext = "Or subscribe to our occasional email newsletter to get updates about our journey in your inbox",
+  title = "Beekeeping events, all in one place",
+  copytext = "Welcome to the Aster event ticker! We're tracking all beekeeping events in one space (on Google Drive). This is our way of building community, as well as letting those interested know where we're headed and when!",
+  link = 'https://blog.asterbees.org',
+  linkText = 'This will be added later',
 } = Astro.props
 ---
 
 <div class="container">
-  <div class="call-to-action flex flex-col flex flex-col gap-6 bg-neutral-200 dark:bg-neutral-900 p-4 rounded-lg">
+  <div class="call-to-action flex flex-col gap-6 bg-neutral-200 dark:bg-neutral-900 p-4 rounded-lg">
     <Heading level="h2" class="text-left text-1xl md:text-1xl">{title}</Heading>
     <p class="text-left text-1xl md:text-left">
       {copytext}
     </p>
-    <div style="min-height: 58px;max-width: 440px;margin: 0 auto;width: 100%"><script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.3/umd/signup-form.min.js" data-button-color="#d648ff" data-button-text-color="#FFFFFF" data-site="https://blog.asterbees.org/" data-locale="en" async></script></div>
+    
+    <Link href={link} isButton size="lg" animateOnHover animationType="nudge">
+      {linkText}
+      <!-- <Icon aria-hidden="true" name="lucide:rocket" size="1.5rem" /> -->
+    </Link>
+    <!-- <p class="text-left text-2xl md:text-left">
+      Or subscribe to get our email newsletter sent directly to your inbox
+    </p> -->
+    <!-- <div style="min-height: 58px;max-width: 280px;margin: 0 auto;width: 80%"><script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.3/umd/signup-form.min.js" data-button-color="#bb78ff" data-button-text-color="#FFFFFF" data-site="https://blog.asterbees.org/" data-locale="en" async></script></div> -->
+
   </div>
 </div>
 

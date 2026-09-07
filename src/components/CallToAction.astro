@@ -39,19 +39,20 @@ const {
 ---
 
 <div class="container">
-  <div class="call-to-action mt-24 mb-32 flex flex-col items-center gap-12 rounded-xl px-12 py-20 md:px-24">
-    <Heading level="h2" class="text-center text-3xl md:text-6xl">{title}</Heading>
-    <p class="text-left text-2xl md:text-left">
+  <div class="call-to-action flex flex-col gap-6 bg-neutral-200 dark:bg-neutral-900 p-4 rounded-lg">
+    <Heading level="h2" class="text-left text-1xl md:text-1xl">{title}</Heading>
+    <p class="text-left text-1xl md:text-left">
       {copytext}
     </p>
+    
     <Link href={link} isButton size="lg" animateOnHover animationType="nudge">
       {linkText}
       <!-- <Icon aria-hidden="true" name="lucide:rocket" size="1.5rem" /> -->
     </Link>
-    <p class="text-left text-2xl md:text-left">
+    <!-- <p class="text-left text-2xl md:text-left">
       Or subscribe to get our email newsletter sent directly to your inbox
-    </p>
-    <div style="min-height: 58px;max-width: 280px;margin: 0 auto;width: 80%"><script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.3/umd/signup-form.min.js" data-button-color="#bb78ff" data-button-text-color="#FFFFFF" data-site="https://blog.asterbees.org/" data-locale="en" async></script></div>
+    </p> -->
+    <!-- <div style="min-height: 58px;max-width: 280px;margin: 0 auto;width: 80%"><script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.3/umd/signup-form.min.js" data-button-color="#bb78ff" data-button-text-color="#FFFFFF" data-site="https://blog.asterbees.org/" data-locale="en" async></script></div> -->
 
   </div>
 </div>
@@ -61,11 +62,11 @@ const {
 
   .call-to-action {
     position: relative;
-    background-image: linear-gradient(
-      315deg,
-      light-dark(var(--color-primary-100), var(--color-secondary-100)) 25%,
-      light-dark(var(--color-secondary-100), var(--color-primary-200))
-    );
-    color: var(--color-neutral-900);
+    // background-image: linear-gradient(
+    //   315deg,
+    //   light-dark(var(--color-primary-100), var(--color-secondary-100)) 25%,
+    //   light-dark(var(--color-secondary-100), var(--color-primary-200))
+    // );
+    // color: var(--color-neutral-900);
   }
 </style>

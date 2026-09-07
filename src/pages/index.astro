@@ -27,6 +27,8 @@ import imlogo from '@assets/images/supporters/imkereibedarflogo.png'
 import ministrylogo from '@assets/images/supporters/bundesministeriumlogo.png'
 import unilogo from '@assets/images/supporters/unigoelogo.png'
 import Subscribe from '@components/Subscribe.astro'
+import CommunityCal from '@components/CommunityCal.astro'
+
 
 ---
 
@@ -126,7 +128,7 @@ import Subscribe from '@components/Subscribe.astro'
   </section>
 
   <div class="container">
-    <!-- <div class="grid grid-cols-1 gap-24 lg:grid-cols-2"> -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
       <!-- <div class="flex flex-col items-left gap-8 md:items-start">
         <p class="text-center text-2xl md:text-left">
           WHAT'S THE BUZZ?
@@ -140,8 +142,10 @@ import Subscribe from '@components/Subscribe.astro'
     
 
     <CallToAction />
+    <Subscribe />
+    <CommunityCal />
 
-    <!-- </div> -->
+    </div>
 
   </div>
 
@@ -159,16 +163,16 @@ import Subscribe from '@components/Subscribe.astro'
           education="Data science & ecological modelling"
         />
         <Team
-          profileImage={Sam}
-          title="Sam Herniman"
-          experience="Specializing in remote sensing, machine learning, and applied ecology, Sam is charged with integrating diverse remote sensing sources. With over a decade of practical experience, Sam is motivated to build a platform that is based in responsible scientific practice."
-          education="Machine learning & remote sensing"
-        />
-        <Team
           profileImage={Anna}
           title="Anna Dodd"
           experience="Anna has worked across the fields of economic development, journalism, communications, and politics. For Aster, she brings her diverse experience to lead the company's communications, partnerships, and financials. She is also a beekeeping apprentice."
           education="Business. partnerships & communications"
+        />
+        <Team
+          profileImage={Sam}
+          title="Sam Herniman"
+          experience="Specializing in remote sensing, machine learning, and applied ecology, Sam is charged with integrating diverse remote sensing sources. With over a decade of practical experience, Sam is motivated to build a platform that is based in responsible scientific practice."
+          education="Machine learning & remote sensing"
         />
         <Team
           profileImage={Leo}
