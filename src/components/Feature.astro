@@ -10,18 +10,14 @@ import { Image } from 'astro:assets'
  */
 interface Props {
   /**
-   * The icon to display
-   */
-  icon: string
-  /**
    * The title to display
    */
   title: string
   /**
    * The number to display
    */
-  number: string
-   /**
+  number: number
+  /**
    * The text to display
    */
   text: string
@@ -36,99 +32,48 @@ interface Props {
    */
 }
 
-const { loading = 'eager' }: Props = Astro.props
-const { icon = 'mdi:rocket', title = 'Title', number = '1', text = 'alhwoehaof', level = 'h3', imageloc }: Props = Astro.props
+const {
+  title = 'Title',
+  number = 1,
+  text = 'alhwoehaof',
+  level = 'h3',
+  imageloc,
+}: Props = Astro.props
 ---
 
-<div class="feature flex flex-col gap-1">
+<div class="feature content flex flex-col gap-1 rounded-xl bg-neutral-200 p-3 dark:bg-neutral-900">
   <!-- <Icon aria-hidden="true" name={icon} /> -->
-  <div class="content">
-    <div class="flex flex-row gap-3 flex-shrink md:flex-wrap">
+  <div class="flex flex-shrink flex-row gap-3 md:flex-wrap justify-start items-center">
     <div class="numberCircle">
-      <Heading level={level} size="h4" style="color: white;">{number}</Heading>
+      <span class="text-neutral-100 text-2xl text-bold">{number}</span>
     </div>
-    <Heading level={level} size="h4" class="mb-2">{title}</Heading>
-     </div>
-     <div>
-    <Image
-        src={imageloc}
-        alt="Aster logo"
-        aria-hidden="true"
-        loading={loading}
-        class="shrink"
-      />
-    <Heading level="h6" size="h5">{text}</Heading>
-    </div>
+    <Heading level={level} size="h4" class="mb-2 text-center">{title}</Heading>
+  </div>
+  <div>
+    <Image src={imageloc} alt="Aster logo" aria-hidden="true" loading="lazy" class="shrink" />
+    <p class="text-center">{text}</p>
   </div>
 </div>
 
 <style lang="scss">
-  @use 'scss/base/breakpoint' as *;
 
-  .feature {
-    position: relative;
-    align-items: center;
-    padding: var(--space-m);
-    inline-size: calc(100% - var(--space-l));
-
-    > * {
-      position: relative;
-      z-index: 2;
-    }
-
-    @include breakpoint(xl) {
-      inline-size: 100%;
-    }
-
-    &::before,
-    &::after {
-      position: absolute;
-      content: '';
-    }
-
-    &::before {
-      z-index: 1;
-      inset: 0;
-      box-shadow: 0 0 0 6px var(--color-neutral-100);
-      // border: 3px solid var(--color-neutral-700);
-      border-radius: var(--radius-l);
-      background-color: var(--color-box-300);
-    }
-
-    &::after {
-      z-index: 0;
-      inset: var(--space-m) -0.85rem -0.85rem 1rem;
-      border-radius: var(--radius-l);
-      // background-color: var(--link-color);
-    }
-  }
-
-  :global(.feature [data-icon]) {
-    inline-size: 4rem;
-    block-size: auto;
-    color: var(--link-color);
-  }
-
-  :global(.darkmode .feature::before) {
-    box-shadow: 0 0 0 6px var(--color-neutral-900);
-    background-color: var(--color-neutral-900);
-  }
-
-/*
+h4 {
+  font-weight: bold;
+  font-size: var(--font-size-2);
+}
+  /*
 Source - https://stackoverflow.com/a/19613616
 Posted by Mike, modified by community. See post 'Timeline' for change history
 Retrieved 2026-08-24, License - CC BY-SA 4.0
 */
 
-.numberCircle {
-  display: flex;
-  width: 4ch; /* Set this to slightly wider than the longest string */
-  align-items: center;  
-  justify-content: center;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;  
-  border: 2px solid #ad64f7;
-  background-color: #ad64f7;
-}
-
+  .numberCircle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--brand-primary);
+    aspect-ratio: 1 / 1;
+    width: 3rem; /* Set this to slightly wider than the longest string */
+  }
 </style>
