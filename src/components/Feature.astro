@@ -47,7 +47,7 @@ const { icon = 'mdi:rocket', title = 'Title', number = '1', text = 'alhwoehaof',
     <div class="numberCircle">
       <Heading level={level} size="h4" style="color: white;">{number}</Heading>
     </div>
-    <Heading level={level} size="h4" class="mb-2">{title}</Heading>
+    <Heading level={level} size="h4" class="mb-2 text-center">{title}</Heading>
      </div>
      <div>
     <Image
@@ -57,7 +57,7 @@ const { icon = 'mdi:rocket', title = 'Title', number = '1', text = 'alhwoehaof',
         loading={loading}
         class="shrink"
       />
-    <Heading level="h6" size="h5">{text}</Heading>
+    <p class="text-center">{text}</p>
     </div>
   </div>
 </div>
@@ -92,7 +92,7 @@ const { icon = 'mdi:rocket', title = 'Title', number = '1', text = 'alhwoehaof',
       box-shadow: 0 0 0 6px var(--color-neutral-100);
       // border: 3px solid var(--color-neutral-700);
       border-radius: var(--radius-l);
-      background-color: var(--color-box-300);
+      background-color: var(--brand-neutral-300);
     }
 
     &::after {
