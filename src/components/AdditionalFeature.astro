@@ -13,11 +13,11 @@ interface Props {
 }
 
 const { title, Icon }: Props = Astro.props
-const [first, ...rest] = title.split(" ")
+const [first, ...rest] = title.split(' ')
 ---
 
 <div class="flex flex-col justify-between gap-4 rounded-xl bg-neutral-200 p-6 dark:bg-neutral-900">
-  <Heading size="h4" class="mb-2">{first}<br/>{rest.join(' ')}</Heading>
+  <Heading level="h3" size="h4" class="mb-2">{first}<br />{rest.join(' ')}</Heading>
   <div class="flex items-center gap-4">
     <Icon size={48} class="flex-shrink-0 text-(--brand-primary)" />
     <p>
@@ -26,4 +26,9 @@ const [first, ...rest] = title.split(" ")
   </div>
 </div>
 
-
+<style>
+  h3 {
+    font-weight: bold;
+    font-size: var(--font-size-2);
+  }
+</style>
