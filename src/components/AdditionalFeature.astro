@@ -16,10 +16,10 @@ const { title, Icon }: Props = Astro.props
 const [first, ...rest] = title.split(" ")
 ---
 
-<div class="flex flex-col justify-between gap-4 rounded-lg bg-neutral-200 p-6 dark:bg-neutral-900">
+<div class="flex flex-col justify-between gap-4 rounded-xl bg-neutral-200 p-6 dark:bg-neutral-900">
   <Heading size="h4" class="mb-2">{first}<br/>{rest.join(' ')}</Heading>
   <div class="flex items-center gap-4">
-    <Icon color="var(--link-color)" size={48} class="flex-shrink-0" />
+    <Icon size={48} class="flex-shrink-0 text-(--brand-primary)" />
     <p>
       <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
     </p>

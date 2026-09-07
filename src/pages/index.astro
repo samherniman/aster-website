@@ -7,14 +7,15 @@ import Team from '@components/Team.astro'
 import CallToAction from '@components/CallToAction.astro'
 import Supporterlogo from '@components/SupporterLogo.astro'
 import SectionSeparator from '@components/SectionSeparator.astro'
+import { Heading } from 'accessible-astro-components'
 
-import featureImage from '@assets/images/features/howitworkscards.png'
-import featureImage1 from '@assets/images/features/howitworkscards1.png'
-import featureImage2 from '@assets/images/features/howitworkscards2.png'
-import featureImage3 from '@assets/images/features/howitworkscards3.png'
-import featureImage4 from '@assets/images/features/howitworkscards4.png'
+import featureImage from '@assets/images/features/feature_img_1.png'
+import featureImage1 from '@assets/images/features/feature_img_2.png'
+import featureImage2 from '@assets/images/features/feature_img_3.png'
+import featureImage3 from '@assets/images/features/feature_img_4.png'
+import featureImage4 from '@assets/images/features/feature_img_5.png'
 
-import {ShoppingCart, Box, MessageCircle} from "@lucide/astro"
+import { ShoppingCart, Box, MessageCircle } from '@lucide/astro'
 
 import Simone from '@assets/images/team/simone.jpg'
 import Sam from '@assets/images/team/sam.png'
@@ -32,104 +33,78 @@ import Subscribe from '@components/Subscribe.astro'
 <DefaultLayout title="Aster Website" useTitleTemplate={false}>
   <Hero />
 
-  <!-- <div class="w-full"> -->
-  <div style="padding-bottom: 60px;" class="container">
-    <div class="flex flex-col justify-between gap-8">
-      <!-- <p class="text-center text-2xl">
-          SUPPORTED BY
-        </p> -->
-      <h3 class="text-center text-6xl lg:text-4xl">Backed by organizations who believe in better beekeeping.</h3>
-      <div class="flex flex-row flex-wrap items-center justify-center lg:flex-nowrap">
+  <section class="flex flex-col justify-between pb-10 container">
+      <SectionSeparator>SUPPORTED BY</SectionSeparator>
+      <p class="text-center text-2xl font-bold">Backed by organizations who believe in better beekeeping.</p>
+      <div class="flex flex-row flex-wrap items-center justify-around lg:flex-nowrap m-6">
         <Supporterlogo profileImage={imlogo} name="Imkereibedarf logo" aria-hidden="true" />
         <Supporterlogo profileImage={unilogo} name="University of Goettingen logo" aria-hidden="true" />
         <Supporterlogo profileImage={existlogo} name="EXIST logo" aria-hidden="true" />
-        <!-- <Supporterlogo
-        profileImage={ministrylogo}
-        name="Bundesministerium logo"
-        aria-hidden="true"
-        />
-        <Supporterlogo
-        profileImage={eulogo}
-        name="European Union logo"
-        aria-hidden="true"
-        /> -->
       </div>
-    </div>
-  </div>
+  </section>
 
-  <div class="container">
-    <div class="grid grid-cols-1 items-center gap-24">
-      <div class="flex flex-col items-center gap-8">
-        <!-- <p class="text-center text-2xl">
-          HOW IT WORKS
-        </p> -->
-        <h3 class="text-center text-6xl lg:text-4xl">Personalized hive insights, right on your phone.</h3>
-        <p class="text-left text-2xl">
-          Aster combines computer vision, remote sensing, and data integration to give beekeepers real time insights
-          into their hives.
-        </p>
-      </div>
-    </div>
-  </div>
 
-  <section class="mb-24">
-    <div class="container grid gap-6 md:grid-cols-3">
+  <section class="mb-24 container">
+    <SectionSeparator>HOW IT WORKS</SectionSeparator>
+    <div class="my-8 mx-auto md:w-min">
+      <p class="text-center font-bold text-2xl md:whitespace-nowrap m-2">
+        Personalized hive insights, right on your phone.
+      </p>
+      <p class="text-center text-xl max-w-lg mx-auto italic">
+        Aster combines computer vision, remote sensing, and data integration to give beekeepers real time insights into
+        their hives.
+      </p>
+    </div>
+    <div class="grid gap-6 md:grid-cols-3">
       <!-- <div class="flex flex-row flex-wrap flex-shrink md:flex-nowrap items-center justify-center"> -->
       <Feature
-        icon="lucide:layout-template"
         title="Capture"
-        number="1"
+        number={1}
         text="The beekeeper captures photos of their beehive with ther smartphone, hands free."
-        level="h2"
+        level="h4"
         imageloc={featureImage}
       />
       <Feature
-        icon="lucide:scissors"
         title="Count"
-        number="2"
-        text="Aster's computer vision model counts the bees with an accuracy rate of 96%."
-        level="h2"
+        number={2}
+        text="Aster's computer vision model counts the bees with an accuracy rate of up to 96%."
+        level="h4"
         imageloc={featureImage1}
       />
       <Feature
-        icon="lucide:accessibility"
         title="Build"
-        number="3"
+        number={3}
         text="Remote sensing data like weather trends, nearby crops, and blooms are integrated."
-        level="h2"
+        level="h4"
         imageloc={featureImage2}
       />
       <Feature
-        icon="lucide:accessibility"
         title="Analyze"
-        number="4"
+        number={4}
         text="Considering all data available, Aster provides an analysis of the health of the hive."
-        level="h2"
+        level="h4"
         imageloc={featureImage3}
       />
       <Feature
-        icon="lucide:accessibility"
         title="Advise"
-        number="5"
+        number={5}
         text="Aster shares reminders and recommendation on next steps for the beekeeper."
-        level="h2"
+        level="h4"
         imageloc={featureImage4}
       />
       <Feature
-        icon="lucide:accessibility"
         title="The next"
-        number="5"
+        number={6}
         text="Aster shares reminders and recommendation on next steps for the beekeeper."
-        level="h2"
+        level="h4"
         imageloc={featureImage4}
       />
     </div>
   </section>
 
-
-  <SectionSeparator title="Additional features" />
-  <section class="mb-24">
-    <div class="container grid gap-6 md:grid-cols-3">
+  <section class="mb-24 container">
+   <SectionSeparator>ADDITIONAL FEATURES</SectionSeparator>
+    <div class="grid gap-6 md:grid-cols-3">
       <AdditionalFeature title="Inventory management" Icon={Box}>
         Tracking for all beekeeping materials, with reminders when you're running low.
       </AdditionalFeature>
