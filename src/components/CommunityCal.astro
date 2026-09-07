@@ -36,11 +36,13 @@ const {
   link = 'https://blog.asterbees.org',
   linkText = 'This will be added later',
 } = Astro.props
+
+const [first, ...rest] = title.split(' ')
+
 ---
 
-<div class="container">
-  <div class="call-to-action flex flex-col gap-6 bg-neutral-200 dark:bg-neutral-900 p-4 rounded-lg">
-    <Heading level="h2" class="text-left text-1xl md:text-1xl">{title}</Heading>
+  <div class="call-to-action flex flex-col gap-1 rounded-xl bg-neutral-200 p-4 dark:bg-neutral-900">
+    <Heading level="h4" size="h4" class="mb-2 text-left">{first}<br />{rest.join(' ')}</Heading>
     <p class="text-left text-1xl md:text-left">
       {copytext}
     </p>
@@ -55,13 +57,18 @@ const {
     <!-- <div style="min-height: 58px;max-width: 280px;margin: 0 auto;width: 80%"><script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.3/umd/signup-form.min.js" data-button-color="#bb78ff" data-button-text-color="#FFFFFF" data-site="https://blog.asterbees.org/" data-locale="en" async></script></div> -->
 
   </div>
-</div>
 
 <style lang="scss">
   @use 'scss/base/mixins' as *;
 
+  h4 {
+  font-weight: bold;
+  font-size: var(--font-size-2);
+}
+
   .call-to-action {
-    position: relative;
+    // position: relative;
+    // margin-bottom: auto
     // background-image: linear-gradient(
     //   315deg,
     //   light-dark(var(--color-primary-100), var(--color-secondary-100)) 25%,
