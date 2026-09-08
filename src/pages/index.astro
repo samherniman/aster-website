@@ -33,24 +33,23 @@ import Subscribe from '@components/Subscribe.astro'
 <DefaultLayout title="Aster Website" useTitleTemplate={false}>
   <Hero />
 
-  <section class="flex flex-col justify-between pb-10 container">
-      <SectionSeparator>SUPPORTED BY</SectionSeparator>
-      <p class="text-center text-2xl font-bold">Backed by organizations who believe in better beekeeping.</p>
-      <div class="flex flex-row flex-wrap items-center justify-around lg:flex-nowrap m-6">
-        <Supporterlogo profileImage={imlogo} name="Imkereibedarf logo" aria-hidden="true" />
-        <Supporterlogo profileImage={unilogo} name="University of Goettingen logo" aria-hidden="true" />
-        <Supporterlogo profileImage={existlogo} name="EXIST logo" aria-hidden="true" />
-      </div>
+  <section class="container flex flex-col justify-between pb-10">
+    <SectionSeparator>SUPPORTED BY</SectionSeparator>
+    <p class="text-center text-2xl font-bold">Backed by organizations who believe in better beekeeping.</p>
+    <div class="m-6 flex flex-row flex-wrap items-center justify-around lg:flex-nowrap">
+      <Supporterlogo profileImage={imlogo} name="Imkereibedarf logo" aria-hidden="true" />
+      <Supporterlogo profileImage={unilogo} name="University of Goettingen logo" aria-hidden="true" />
+      <Supporterlogo profileImage={existlogo} name="EXIST logo" aria-hidden="true" />
+    </div>
   </section>
 
-
-  <section class="mb-24 container">
-    <SectionSeparator>HOW IT WORKS</SectionSeparator>
-    <div class="my-8 mx-auto md:w-min">
-      <p class="text-center font-bold text-2xl md:whitespace-nowrap m-2">
+  <section class="container mb-24">
+    <SectionSeparator> HOW IT WORKS </SectionSeparator>
+    <div class="mx-auto my-8 md:w-min">
+      <p class="m-2 text-center text-2xl font-bold md:whitespace-nowrap">
         Personalized hive insights, right on your phone.
       </p>
-      <p class="text-center text-xl max-w-lg mx-auto italic">
+      <p class="mx-auto max-w-lg text-center text-xl italic">
         Aster combines computer vision, remote sensing, and data integration to give beekeepers real time insights into
         their hives.
       </p>
@@ -102,8 +101,8 @@ import Subscribe from '@components/Subscribe.astro'
     </div>
   </section>
 
-  <section class="mb-24 container">
-   <SectionSeparator>ADDITIONAL FEATURES</SectionSeparator>
+  <section class="container mb-24">
+    <SectionSeparator>ADDITIONAL FEATURES</SectionSeparator>
     <div class="grid gap-6 md:grid-cols-3">
       <AdditionalFeature title="Inventory management" Icon={Box}>
         Tracking for all beekeeping materials, with reminders when you're running low.

@@ -7,64 +7,57 @@ import Image from 'astro/components/Image.astro'
 import Sam from '@assets/images/team/sam.png'
 
 const { loading = 'eager' }: Props = Astro.props
-
-
 ---
 
 <DefaultLayout title="Contact">
-  <PageHeader
-    title="Sam Herniman"
-    subtitle="Head of science and development"
-    bgType="gradient"
-  />
+  <PageHeader title="Sam Herniman" subtitle="Head of science and development" bgType="gradient" />
   <section class="container my-16">
     <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
       <div class="space-content">
-         <Image
-        src={Sam}
-        alt="Sam Herniman"
-        aria-hidden="true"
-        layout='full-width'
-        position='center'
-        loading={loading}
-      />
-        
+        <Image
+          src={Sam}
+          alt="Sam Herniman"
+          aria-hidden="true"
+          layout="full-width"
+          position="center"
+          loading={loading}
+        />
       </div>
       <div class="space-content">
         <Heading level="h2">Contact details</Heading>
-        <p>Specializing in remote sensing, machine learning, and applied ecology, Sam is charged with integrating diverse remote sensing sources. With over a decade of practical experience, Sam is motivated to build a platform that is based in responsible scientific practice.</p>
+        <p>
+          Specializing in remote sensing, machine learning, and applied ecology, Sam is charged with integrating diverse
+          remote sensing sources. With over a decade of practical experience, Sam is motivated to build a platform that
+          is based in responsible scientific practice.
+        </p>
         <p>Sam enjoys lazy Sunday mornings listening to the radio and long walks on the beach.</p>
 
-        <div class="gap-2xs flex items-center flex-wrap">
+        <div class="gap-2xs flex flex-wrap items-center">
           <!-- <Icon aria-hidden="true" name="lucide:mail" size={20} class="shrink-0" /> -->
-            <Link 
-            href="https://github.com/samherniman/"
-            isButton
-            type="secondary"
-            animateOnHover
-            animationType="boop"
-            >Github</Link>
-            <Link 
+          <Link href="https://github.com/samherniman/" isButton type="secondary" animateOnHover animationType="boop"
+            >Github</Link
+          >
+          <Link
             href="https://www.linkedin.com/in/samherniman/"
             isButton
             type="secondary"
             animateOnHover
-            animationType="boop"
-            >LinkedIn</Link>
-            <Link 
+            animationType="boop">LinkedIn</Link
+          >
+          <Link
             href="https://www.inaturalist.org/people/112785"
             isButton
             type="secondary"
             animateOnHover
-            animationType="boop"
-            >iNaturalist</Link>
-            <Link 
+            animationType="boop">iNaturalist</Link
+          >
+          <Link
             href="https://orcid.org/0000-0001-7663-2897"
             isButton
             type="secondary"
             animateOnHover
-            animationType="boop"
-            >ORCID</Link>
+            animationType="boop">ORCID</Link
+          >
         </div>
         <div class="gap-2xs flex items-center">
           <!-- <Icon aria-hidden="true" name="lucide:clock" size={20} class="shrink-0" /> -->

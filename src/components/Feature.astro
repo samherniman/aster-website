@@ -32,20 +32,14 @@ interface Props {
    */
 }
 
-const {
-  title = 'Title',
-  number = 1,
-  text = 'alhwoehaof',
-  level = 'h3',
-  imageloc,
-}: Props = Astro.props
+const { title = 'Title', number = 1, text = 'alhwoehaof', level = 'h3', imageloc }: Props = Astro.props
 ---
 
 <div class="feature content flex flex-col gap-1 rounded-xl bg-neutral-200 p-3 dark:bg-neutral-900">
   <!-- <Icon aria-hidden="true" name={icon} /> -->
-  <div class="flex flex-shrink flex-row gap-3 md:flex-wrap justify-start items-center">
+  <div class="flex flex-shrink flex-row items-center justify-start gap-3 md:flex-wrap">
     <div class="numberCircle">
-      <span class="text-neutral-100 text-2xl text-bold">{number}</span>
+      <span class="text-bold text-2xl text-neutral-100">{number}</span>
     </div>
     <Heading level={level} size="h4" class="mb-2 text-center">{title}</Heading>
   </div>
@@ -56,11 +50,10 @@ const {
 </div>
 
 <style lang="scss">
-
-h4 {
-  font-weight: bold;
-  font-size: var(--font-size-2);
-}
+  h4 {
+    font-weight: bold;
+    font-size: var(--font-size-2);
+  }
   /*
 Source - https://stackoverflow.com/a/19613616
 Posted by Mike, modified by community. See post 'Timeline' for change history

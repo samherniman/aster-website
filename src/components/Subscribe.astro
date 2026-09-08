@@ -31,8 +31,8 @@ interface Props {
 }
 
 const {
-  title = "Sign up for our newsletter",
-  copytext = "Or subscribe to our occasional email newsletter to get updates about our journey in your inbox",
+  title = 'Sign up for our newsletter',
+  copytext = 'Or subscribe to our occasional email newsletter to get updates about our journey in your inbox',
 } = Astro.props
 ---
 
@@ -42,7 +42,15 @@ const {
     <p class="text-left text-2xl md:text-left">
       {copytext}
     </p>
-    <div style="min-height: 58px;max-width: 440px;margin: 0 auto;width: 100%"><script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.3/umd/signup-form.min.js" data-button-color="#d648ff" data-button-text-color="#FFFFFF" data-site="https://blog.asterbees.org/" data-locale="en" async></script></div>
+    <div style="min-height: 58px;max-width: 440px;margin: 0 auto;width: 100%">
+      <script
+        src="https://cdn.jsdelivr.net/ghost/signup-form@~0.3/umd/signup-form.min.js"
+        data-button-color="#d648ff"
+        data-button-text-color="#FFFFFF"
+        data-site="https://blog.asterbees.org/"
+        data-locale="en"
+        async></script>
+    </div>
   </div>
 </div>
 
