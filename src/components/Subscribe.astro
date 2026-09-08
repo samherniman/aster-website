@@ -40,10 +40,12 @@ const [first, ...rest] = title.split(' ')
 ---
 
   <div class="call-to-action flex flex-col gap-1 rounded-xl bg-neutral-200 p-4 dark:bg-neutral-900">
+    <div>
     <Heading level="h4" size="h4" class="mb-2 text-left">{first}<br />{rest.join(' ')}</Heading>
     <p class="text-left text-1xl md:text-left">
       {copytext}
     </p>
+    </div>
     <div style="min-height: 58px;max-width: 440px;margin: 0 auto;width: 100%"><script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.3/umd/signup-form.min.js" data-button-color="#bb78ff" data-button-text-color="#FFFFFF" data-site="https://blog.asterbees.org/" data-locale="en" async></script></div>
   </div>
 
@@ -64,5 +66,7 @@ const [first, ...rest] = title.split(' ')
     //   light-dark(var(--color-secondary-100), var(--color-primary-200))
     // );
     // color: var(--color-neutral-900);
+        justify-content: space-between;
+
   }
 </style>

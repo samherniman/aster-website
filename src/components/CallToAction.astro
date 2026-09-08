@@ -42,15 +42,17 @@ const [first, ...rest] = title.split(' ')
 ---
 
   <div class="call-to-action flex flex-col gap-1 rounded-xl bg-neutral-200 p-4 dark:bg-neutral-900">
+    <div>
     <Heading level="h4" size="h4" class="mb-2 text-left">{first}<br />{rest.join(' ')}</Heading>
-    <!-- <Heading level="h2" class="text-left text-1xl md:text-1xl">{title}</Heading> -->
     <p class="text-left text-1xl md:text-left">
       {copytext}
     </p>
+    </div>
+    <p align="center">
     <Link href={link} isButton size="lg" animateOnHover animationType="nudge">
       {linkText}
     </Link>
-   
+   </p>
   </div>
 
 <style lang="scss">
@@ -64,11 +66,13 @@ const [first, ...rest] = title.split(' ')
   .call-to-action {
     // position: relative;
     // margin-bottom: auto
+    // margin: 0;
     // background-image: linear-gradient(
     //   315deg,
     //   light-dark(var(--color-primary-100), var(--color-secondary-100)) 25%,
     //   light-dark(var(--color-secondary-100), var(--color-primary-200))
     // );
     // color: var(--color-neutral-900);
+    justify-content: space-between;
   }
 </style>
