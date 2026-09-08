@@ -105,9 +105,9 @@
   font-style: normal;
   font-weight: 200 900;
   src:
-    local('Source Sans Pro'),
-    local('SourceSansPro'),
-    url('/fonts/SourceSans3-VariableFont_wght.ttf') format('true-type');
+    // local('Source Sans Pro'),
+    // local('SourceSansPro'),
+    url('/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
   font-family: 'Source Sans Pro';
   font-display: swap;
 }
@@ -116,9 +116,9 @@
   font-style: italic;
   font-weight: 200 900;
   src:
-    local('Source Sans Pro'),
-    local('SourceSansPro'),
-    url('/fonts/SourceSans3-Italic-VariableFont_wght.ttf') format('true-type');
+    // local('Source Sans Pro'),
+    // local('SourceSansPro'),
+    url('/fonts/SourceSans3-Italic-VariableFont_wght.ttf') format('truetype');
   font-family: 'Source Sans Pro';
   font-display: swap;
 }
