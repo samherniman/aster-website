@@ -6,7 +6,7 @@ import { Image } from 'astro:assets'
 /**
  * Team Component
  *
- * @description A component that displays a team 
+ * @description A component that displays a team
  */
 interface Props {
   /**
@@ -33,9 +33,8 @@ interface Props {
 }
 
 const { loading = 'eager' }: Props = Astro.props
-const {title = 'Title', level = 'h3', profileImage, experience = 'test',  education = 'Test'}: Props = Astro.props
+const { title = 'Title', level = 'h3', profileImage, experience = 'test', education = 'Test' }: Props = Astro.props
 ---
-
 
 <div class="team flex flex-col gap-4">
   <div class="content">
@@ -43,18 +42,10 @@ const {title = 'Title', level = 'h3', profileImage, experience = 'test',  educat
     <p>
       {education}
     </p>
-    <Image
-        src={profileImage}
-        alt={title}
-        aria-hidden="true"
-        layout='full-width'
-        position='center'
-        loading={loading}
-      />
+    <Image src={profileImage} alt={title} aria-hidden="true" layout="full-width" position="center" loading={loading} />
     <p>
       {experience}
     </p>
-    
   </div>
 </div>
 
@@ -84,10 +75,10 @@ const {title = 'Title', level = 'h3', profileImage, experience = 'test',  educat
     &::before {
       z-index: 1;
       inset: 0;
-      box-shadow: 0 0 0 6px var(--color-neutral-100);
-      border: 3px solid var(--color-neutral-700);
+      box-shadow: 0 0 0 6px var(--color-background-100);
+      border: 3px solid var(--color-background-100);
       border-radius: var(--radius-l);
-      background-color: var(--color-neutral-100);
+      background-color: var(--color-background-100);
     }
 
     &::after {

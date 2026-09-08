@@ -7,32 +7,29 @@ import Image from 'astro/components/Image.astro'
 import Simone from '@assets/images/team/simone.jpg'
 
 const { loading = 'eager' }: Props = Astro.props
-
-
 ---
 
 <DefaultLayout title="Contact">
-  <PageHeader
-    title="Simone Massaro"
-    subtitle="Head of data science & ecological modelling"
-    bgType="gradient"
-  />
+  <PageHeader title="Simone Massaro" subtitle="Head of data science & ecological modelling" bgType="gradient" />
   <section class="container my-16">
     <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
       <div class="space-content">
-         <Image
-        src={Simone}
-        alt="Simone Massaro"
-        aria-hidden="true"
-        layout='full-width'
-        position='center'
-        loading={loading}
-      />
-        
+        <Image
+          src={Simone}
+          alt="Simone Massaro"
+          aria-hidden="true"
+          layout="full-width"
+          position="center"
+          loading={loading}
+        />
       </div>
       <div class="space-content">
         <Heading level="h2">Contact details</Heading>
-        <p>Simone is a forester, data scientist, and ecologist currently doing his PhD in satellite based forest monitoring. Simone brings his experience across ecology and software development to build a platform that can be used by beekeepers and researchers alike.</p>
+        <p>
+          Simone is a forester, data scientist, and ecologist currently doing his PhD in satellite based forest
+          monitoring. Simone brings his experience across ecology and software development to build a platform that can
+          be used by beekeepers and researchers alike.
+        </p>
         <div class="gap-2xs flex items-center">
           <!-- <Icon aria-hidden="true" name="lucide:mail" size={20} class="shrink-0" /> -->
           <p>

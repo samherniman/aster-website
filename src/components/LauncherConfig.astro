@@ -1,11 +1,5 @@
 ---
-import {
-  Launcher,
-  LauncherPreferences,
-  LauncherSwitch,
-  LauncherNav,
-  LauncherLink,
-} from 'accessible-astro-launcher'
+import { Launcher, LauncherPreferences, LauncherSwitch, LauncherNav, LauncherLink } from 'accessible-astro-launcher'
 // import { Icon } from 'astro-icon/components'
 import { getCollection } from 'astro:content'
 import { BLOG_API_URL } from 'astro:env/server'
@@ -94,11 +88,7 @@ const launcherSocialItems = (themeConfig.socials ?? []).map((item) => ({
 
 <Launcher id="site-launcher">
   <LauncherPreferences label="Preferences">
-    {
-      launcherPreferenceItems.map((item) => (
-        <LauncherSwitch label={item.label} onAction={item.onAction} />
-      ))
-    }
+    {launcherPreferenceItems.map((item) => <LauncherSwitch label={item.label} onAction={item.onAction} />)}
   </LauncherPreferences>
   <LauncherNav label="Navigate to">
     {

@@ -12,8 +12,4 @@ interface Props {
 const { profileImage, name } = Astro.props as Props
 ---
 
-  <Image
-    src={profileImage}
-    alt={name}
-    class="lg:shrink object-contain lg:min-w-1/5 max-w-40"
-  />
+<Image src={profileImage} alt={name} class="max-w-40 object-contain lg:min-w-1/5 lg:shrink" />

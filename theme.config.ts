@@ -22,10 +22,10 @@ export default defineThemeConfig({
     darkmode: true,
     items: [
       {
-              type: 'link',
-              label: 'Home',
-              href: '/',
-            },
+        type: 'link',
+        label: 'Home',
+        href: '/',
+      },
       // {
       //         type: 'link',
       //         label: 'Blog',
@@ -71,10 +71,10 @@ export default defineThemeConfig({
       //         ],
       //       },
       {
-              type: 'link',
-              label: 'Contact',
-              href: '/contact',
-            }
+        type: 'link',
+        label: 'Contact',
+        href: '/contact',
+      },
     ],
   },
   socials: [],
