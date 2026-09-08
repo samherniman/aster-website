@@ -28,6 +28,7 @@ import imlogo from '@assets/images/supporters/imkereibedarflogo.png'
 import ministrylogo from '@assets/images/supporters/bundesministeriumlogo.png'
 import unilogo from '@assets/images/supporters/unigoelogo.png'
 import Subscribe from '@components/Subscribe.astro'
+import CommunityCal from '@components/CommunityCal.astro'
 ---
 
 <DefaultLayout title="Aster Website" useTitleTemplate={false}>
@@ -52,8 +53,8 @@ import Subscribe from '@components/Subscribe.astro'
       <p class="mx-auto max-w-lg text-center text-xl italic">
         Aster combines computer vision, remote sensing, and data integration to give beekeepers real time insights into
         their hives.
-      </p>
-    </div>
+        </p>
+      </div>
     <div class="grid gap-6 md:grid-cols-3">
       <!-- <div class="flex flex-row flex-wrap flex-shrink md:flex-nowrap items-center justify-center"> -->
       <Feature
@@ -116,23 +117,16 @@ import Subscribe from '@components/Subscribe.astro'
     </div>
   </section>
 
-  <div class="container">
-    <!-- <div class="grid grid-cols-1 gap-24 lg:grid-cols-2"> -->
-    <!-- <div class="flex flex-col items-left gap-8 md:items-start">
-        <p class="text-center text-2xl md:text-left">
-          WHAT'S THE BUZZ?
-        </p>
-        <h3 class="text-center text-4xl md:text-left lg:text-4xl">Join the Aster community</h3>
-
-        <p class="text-center text-2xl md:text-left">
-          Learn about what we're building, and participate in the process!
-        </p> -->
-    <!-- </div> -->
-
+  <section class="mb-24 container">
+   <SectionSeparator>WHAT'S THE BUZZ?</SectionSeparator>
+    <div class="grid gap-6 md:grid-cols-3">
+    
     <CallToAction />
-
-    <!-- </div> -->
-  </div>
+    <Subscribe />
+    <CommunityCal />
+    
+    </div>
+  </section>
 
   <section class="my-24 text-left" id="team">
     <div class="container">
@@ -141,19 +135,8 @@ import Subscribe from '@components/Subscribe.astro'
         We are a team of beekeepers, scientists, and developers committed to making responsible beekeeping easier and
         more accessible.
       </h3>
-      <div class="grid grid-cols-1 justify-stretch gap-6 md:grid-cols-2">
-        <Team
-          profileImage={Simone}
-          title="Simone Massaro"
-          experience="Simone is a forester, data scientist, and ecologist currently doing his PhD in satellite based forest monitoring. Simone brings his experience across ecology and software development to build a platform that can be used by beekeepers and researchers alike."
-          education="Data science & ecological modelling"
-        />
-        <Team
-          profileImage={Sam}
-          title="Sam Herniman"
-          experience="Specializing in remote sensing, machine learning, and applied ecology, Sam is charged with integrating diverse remote sensing sources. With over a decade of practical experience, Sam is motivated to build a platform that is based in responsible scientific practice."
-          education="Machine learning & remote sensing"
-        />
+      <div class="grid grid-cols-1 justify-stretch gap-2 md:grid-cols-2">
+        
         <Team
           profileImage={Anna}
           title="Anna Dodd"
@@ -161,10 +144,22 @@ import Subscribe from '@components/Subscribe.astro'
           education="Business. partnerships & communications"
         />
         <Team
+          profileImage={Simone}
+          title="Simone Massaro"
+          experience="Simone is a forester, data scientist, and ecologist currently doing his PhD in satellite based forest monitoring. Simone brings his experience across ecology and software development to build a platform that can be used by beekeepers and researchers alike."
+          education="Data science & ecological modelling"
+        />
+        <Team
           profileImage={Leo}
           title="Leopold Dodd"
           experience="A certified beekeeper with 10 years of practical experience, Leopold provides beekeeping expertise and knowledge to inform the development of the app, leads app testing, and fosters Aster's beekeeper community. A native German speaker, he is the contact point for German relations."
           education="Beekeeping & field operations"
+        />
+        <Team
+          profileImage={Sam}
+          title="Sam Herniman"
+          experience="Specializing in remote sensing, machine learning, and applied ecology, Sam is charged with integrating diverse remote sensing sources. With over a decade of practical experience, Sam is motivated to build a platform that is based in responsible scientific practice."
+          education="Machine learning & remote sensing"
         />
       </div>
     </div>
