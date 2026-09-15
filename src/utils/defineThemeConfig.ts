@@ -57,7 +57,7 @@ const defaultConfig: Omit<ThemeConfig, 'name' | 'id'> = {
   seo: {
     title: 'Aster',
     subtitle: 'Every bee counts',
-    description: 'Aster is the beekeeping app that helps beekepers beekeep better.',
+    description: 'Aster is the beekeeping app that helps beekeepers beekeep better.',
     author: '',
     image: null,
   },
