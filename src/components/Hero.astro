@@ -2,7 +2,6 @@
 import { Link, Notification } from 'accessible-astro-components'
 // import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
-import heroLight from '../assets/img/1.svg'
 
 /**
  * Hero Component
@@ -50,9 +49,8 @@ const { src = '/howitworks.png' }: Props = Astro.props
           </Link>
         </div>
       </div>
-      <img class="hero-light" src={heroLight.src} alt="" width="1200" height="1000" />
-<Image class="hero-dark" src={src} alt="" decoding="async" width={1200} height={1000} loading="eager" />
-  </div>
+      <Image class="hidden lg:block" src={src} alt="" decoding="async" width={1200} height={1000} loading="eager" />
+    </div>
   </div>
 </section>
 
@@ -60,21 +58,6 @@ const { src = '/howitworks.png' }: Props = Astro.props
   h1 {
     text-wrap: unset;
   }
-  :global(.hero-light) {
-  display: none;
-}
-
-.hero-dark {
-  display: none;
-}
-
-:global(:root:not(.darkmode)) .hero-light {
-  display: block;
-}
-
-:global(.darkmode) .hero-dark {
-  display: block;
-}
 
   .text-gradient {
     background: linear-gradient(
