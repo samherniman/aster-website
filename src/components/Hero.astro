@@ -1,109 +1,89 @@
 ---
-import { Icon } from 'astro-icon/components'
+import { Link, Notification } from 'accessible-astro-components'
+// import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+import heroLight from '../assets/img/1.svg'
 
-interface IconDetail {
-  /** The name of the icon (e.g., from an icon pack recognized by astro-icon). */
-  name: string
-  /** The link to navigate to when the icon is clicked. */
-  link: string
-  /** The width of the icon. Can be a string (e.g., "24px") or a number (e.g., 24). */
-  width?: string | number
-  /** The height of the icon. Can be a string (e.g., "24px") or a number (e.g., 24). */
-  height?: string | number
-  /** Optional CSS class to apply to the icon's container div for specific styling. */
-  class?: string
+/**
+ * Hero Component
+ *
+ * @description A component that displays a hero section with a title, description, and image
+ */
+interface Props {
+  /**
+   * The source URL for the image
+   */
+  src?: string
 }
 
-const iconBigSize = {
-  width: 150,
-  height: 150,
-}
-
-const iconSmallSize = {
-  width: 150,
-  height: 150,
-}
-
-const icons: IconDetail[] = [
-  // This will be rendered in a 2x2 grid
-  // First Row
-  { name: 'lucide:bar-chart', link: '/science', ...iconSmallSize, class: 'icon-wrapper icon-secondary order-1' },
-  { name: 'lucide:flower-2', link: '/biodiversity', ...iconBigSize, class: 'icon-wrapper icon-primary order-2' },
-  // Second Row
-  { name: 'lucide:trees', link: 'forest', ...iconBigSize, class: 'icon-wrapper icon-primary order-4 lg:order-3' },
-  {
-    name: 'lucide:workflow',
-    link: 'custom-solutions',
-    ...iconSmallSize,
-    class: 'icon-wrapper icon-secondary order-3 lg:order-3',
-  },
-]
+const { src = '/howitworks.png' }: Props = Astro.props
 ---
 
-<section class="hero my-10 mb-25">
-  <div class="container">
-    <div class="grid grid-cols-1 items-end gap-24 lg:grid-cols-2">
-      <div class="flex flex-col items-center gap-8 md:items-start">
-        <h2 class="text-center text-3xl font-light md:text-left">Digital solutions for nature</h2>
-        <h1 class="justify-start text-center text-6xl font-bold md:text-left lg:text-7xl">
-          <span class="text-gradient-light">PANDION LABS</span>
-        </h1>
-        <p class="text-center text-xl md:text-left">
-          We maximize the impact of your work by bringing software engineering and data science best practices to the
-          sectors of forestry, biodiversity, and natural sciences.
+<section class="hero my-24">
+  <div class="container" style="padding-bottom: 10%;">
+    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+      <div class="flex flex-col items-left gap-8 md:items-start">
+        <h1 class="text-left text-6xl md:text-left lg:text-8xl">Every bee counts.</h1>
+        <p class="text-left text-2xl md:text-left">
+          Aster is the beekeeping app that helps beekeepers beekeep better.
         </p>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
-          <a class="button has-icon" href="#services">
-            <Icon name="lucide:info" />
-            Our services
-          </a>
-          <a class="button has-icon color-secondary" href="#contact">
-            <Icon name="lucide:mail" />
+          <Link
+            href="https://blog.asterbees.org"
+            isButton
+            type="neutral"
+            animateOnHover
+            animationType="boop"
+          >
+            <!-- <Icon aria-hidden="true" name="lucide:star" size="1.5rem" /> -->
+            Join the community
+          </Link>
+          <Link
+            href="./contact"
+            isButton
+            type="primary"
+            animateOnHover
+            animationType="boop"
+          >
+            <!-- <Icon aria-hidden="true" name="lucide:bookmark" size="1.5rem" /> -->
             Contact us
-          </a>
+          </Link>
         </div>
       </div>
-      <div class="icon-container hidden self-center justify-self-start md:block lg:justify-self-end">
-        <div class="mx-auto grid w-fit grid-cols-4 items-center justify-center gap-8 md:grid-cols-4 lg:grid-cols-2">
-          {
-            icons.map((icon) => (
-              <a class={icon.class || ''} href={icon.link}>
-                <Icon name={icon.name} width={icon.width} height={icon.height} />
-              </a>
-            ))
-          }
-        </div>
-      </div>
-    </div>
-
-    <style lang="scss">
-      h1 {
-        text-wrap: unset;
-      }
-
-      a {
-        color: inherit;
-      }
-
-      .icon-wrapper {
-        place-self: center;
-        box-shadow: var(--elevation-3, 0 1px 3px rgba(0 0 0 / 0.12));
-        border-radius: var(--radius-l, 0.75rem);
-        padding: 1.25rem;
-      }
-
-      .icon-primary {
-        color: var(--color-primary-200);
-      }
-      .icon-secondary {
-        /* use default font color */
-      }
-      .icon-wrapper:hover {
-        transform: scale(1.08);
-      }
-      [data-icon] {
-        opacity: 0.75;
-      }
-    </style>
+      <img class="hero-light" src={heroLight.src} alt="" width="1200" height="1000" />
+<Image class="hero-dark" src={src} alt="" decoding="async" width={1200} height={1000} loading="eager" />
+  </div>
   </div>
 </section>
+
+<style lang="scss">
+  h1 {
+    text-wrap: unset;
+  }
+  :global(.hero-light) {
+  display: none;
+}
+
+.hero-dark {
+  display: none;
+}
+
+:global(:root:not(.darkmode)) .hero-light {
+  display: block;
+}
+
+:global(.darkmode) .hero-dark {
+  display: block;
+}
+
+  .text-gradient {
+    background: linear-gradient(
+      315deg,
+      light-dark(var(--color-primary-300), var(--color-secondary-100)) 25%,
+      light-dark(var(--color-secondary-300), var(--color-primary-200))
+    );
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>

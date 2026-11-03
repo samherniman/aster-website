@@ -1,0 +1,34 @@
+---
+import { Card, Heading, Link } from 'accessible-astro-components'
+import { type Icon as IconType } from '@lucide/astro'
+
+/**
+ * Feature2 Component
+ *
+ * @description A component that displays a feature2 with an icon, title, and description
+ */
+interface Props {
+  title: string
+  Icon: typeof IconType
+}
+
+const { title, Icon }: Props = Astro.props
+const [first, ...rest] = title.split(' ')
+---
+
+<div class="flex flex-col justify-between gap-4 rounded-xl bg-neutral-200 p-6 dark:bg-neutral-900">
+  <Heading level="h3" size="h4" class="mb-2">{first}<br />{rest.join(' ')}</Heading>
+  <div class="flex items-center gap-4">
+    <Icon size={48} class="flex-shrink-0 text-(--brand-primary)" />
+    <p>
+      <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
+    </p>
+  </div>
+</div>
+
+<style>
+  h3 {
+    font-weight: bold;
+    font-size: var(--font-size-2);
+  }
+</style>
